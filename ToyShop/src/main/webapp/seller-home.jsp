@@ -127,9 +127,7 @@
                      <li class="nav-item">
                         <a href="service.html" class="nav-link">Service</a>
                      </li>
-                     <li class="nav-item">
-                        <a href="shop.html" class="nav-link">Shop Now</a>
-                     </li>
+                    
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Product
@@ -222,7 +220,7 @@
                <div class="col-lg-4 col-md-6 col-sm-6 text-center banner-agile-flowers">
                   <img src="img/<%=p.getImage() %>" class="img-thumbnail" alt="">
                   <div class="banner-right-icon">
-                     <a href="single-product.jsp?id=<%=p.getPid()%>"><h4 class="pt-3"><%=p.getPname() %></h4></a>
+                     <a href="seller-single-product.jsp?id=<%=p.getPid()%>"><h4 class="pt-3"><%=p.getPname() %></h4></a>
                       <h3 class="pt-3">Rs. <%=p.getPprice() %></h3>
                   </div>
                </div>

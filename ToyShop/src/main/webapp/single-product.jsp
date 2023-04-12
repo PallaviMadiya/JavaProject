@@ -63,7 +63,7 @@
 		response.sendRedirect("customer-login.jsp");
 	}
 	%>
-		<% List<WishList> list2 = WishListDao.getWishLIstByCusId(c.getCid()); %>
+	<% List<WishList> list2 = WishListDao.getWishLIstByCusId(c.getCid()); %>
 	<% int wishListSize = list2.size(); %>
 	<% List<Cart> list3 = CartDao.getCartByCusId(c.getCid()); %>
 	<% int cartSize = list3.size(); %>

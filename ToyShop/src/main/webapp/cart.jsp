@@ -234,10 +234,10 @@
 							<div class="col-md-4 checkout-left-basket">
 								<%for(Cart c1:list){ %>
 								<ul>
-									<li>Product1 <i>-</i> <span><%=c1.getTotal() %> </span></li>
+									<li><%=c1.getPname() %> <i>:</i> <span>Rs.<%=c1.getTotal() %> </span></li>
 								</ul>
 							<%} %>
-							<h5>Total : <%out.print(net_price); %></h5>
+							<h5>Total : Rs.<%out.print(net_price); %></h5>
 						</div>
 						<div class="col-md-8 address_form">
 							<h4>Add a new Details</h4>
@@ -268,7 +268,7 @@
 												<div class="clear"></div>
 											</div>
 										</div>
-										<button class="submit check_out">Checkout</button>
+										<button class="submit" value="check_out" name="action">Checkout</button>
 									</div>
 								</section>
 							</form>
