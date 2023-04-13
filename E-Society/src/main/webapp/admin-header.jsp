@@ -1,9 +1,6 @@
-<%@page import="model.Admin"%>
-<%@page import="dao.AdminDao"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<html>
+<!DOCTYPE html>
 <head>
 <meta charset="ISO-8859-1">
   <!-- Required meta tags -->
@@ -19,28 +16,30 @@
 	
   <!-- google fonts -->
   <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
-</head></head>
+</head>
+<html>
 <body class="sidebar-menu-collapsed">
-<section>
+  <div class="se-pre-con"></div>
+
   <!-- sidebar menu start -->
   <div class="sidebar-menu sticky-sidebar-menu">
 
     <!-- logo start -->
     <div class="logo">
-      <h1><a href="admin-home.jsp">E-Society</a></h1>
+      <h1><a href="index.html">Collective</a></h1>
     </div>
 
   <!-- if logo is image enable this -->
     <!-- image logo --
     <div class="logo">
-      <a href="admin-home.jsp">
+      <a href="index.html">
         <img src="image-path" alt="Your logo" title="Your logo" class="img-fluid" style="height:35px;" />
       </a>
     </div>
     <!-- //image logo -->
 
     <div class="logo-icon text-center">
-      <a href="admin-home.jsp" title="logo"><img src="admin/assets/images/logo.png" alt="logo-icon"> </a>
+      <a href="index.html" title="logo"><img src="admin/assets/images/logo.png" alt="logo-icon"> </a>
     </div>
     <!-- //logo end -->
 
@@ -48,7 +47,7 @@
 
       <!-- sidebar nav start -->
       <ul class="nav nav-pills nav-stacked custom-nav">
-        <li class="active"><a href="admin-home.jsp"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
+        <li class="active"><a href="index.html"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
         </li>
         <li class="menu-list">
           <a href="#"><i class="fa fa-cogs"></i>
@@ -73,7 +72,9 @@
     </div>
   </div>
   <!-- //sidebar menu end -->
-  <!-- header-starts -->
+  
+
+ <!-- header-starts -->
   <div class="header sticky-header">
 
     <!-- notification menu start -->
@@ -89,7 +90,7 @@
           <div class="profile_details_left">
             <ul class="nofitications-dropdown">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
                     class="fa fa-bell-o"></i><span class="badge blue">3</span></a>
                 <ul class="dropdown-menu">
                   <li>
@@ -175,7 +176,7 @@
             <ul>
               <li class="dropdown profile_details_drop">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
-                  aria-expanded="true">
+                  aria-expanded="false">
                   <div class="profile_img">
                     <img src="admin/assets/images/profileimg.jpg" class="rounded-circle" alt="" />
                     <div class="user-active">
@@ -185,10 +186,10 @@
                 </a>
                 <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
                   <li class="user-info">
-                    <h5 class="user-name"></h5>
+                    <h5 class="user-name">John Deo</h5>
                     <span class="status ml-2">Available</span>
                   </li>
-                  <li> <a href="admin-profile.jsp"><i class="lnr lnr-user"></i>My Profile</a> </li>
+                  <li> <a href="#"><i class="lnr lnr-user"></i>My Profile</a> </li>
                   <li> <a href="#"><i class="lnr lnr-users"></i>1k Followers</a> </li>
                   <li> <a href="#"><i class="lnr lnr-cog"></i>Setting</a> </li>
                   <li> <a href="#"><i class="lnr lnr-heart"></i>100 Likes</a> </li>
@@ -203,10 +204,9 @@
     <!--notification menu end -->
   </div>
   <!-- //header-ends -->
- </section>
-  
- 
-</button>
+    
+
+
 <script>
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function () {
@@ -282,5 +282,6 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="admin/assets/js/bootstrap.min.js"></script>
-  </body>
+   </body>
 </html>
+    
