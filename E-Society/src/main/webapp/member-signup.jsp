@@ -27,6 +27,25 @@
       
       <h3 class="hny-title mb-lg-5 mb-4">Member Sign Up</h3>
         <div class="contacts12-main mb-5">
+        <%
+        	String msg1 = (String)request.getAttribute("msg1");
+        	if(msg1 != null)
+        	{
+        %>
+     		<h4><%=msg1 %></h4>
+        <%
+        	}
+        %>
+        <%
+        	String msg = (String)request.getAttribute("msg");
+        	if(msg != null)
+        	{
+        %>
+     		<h4><%=msg %></h4>
+        <%
+        	}
+        %>
+        <br>
             <form action="MemberController" method="post">
                 <div class="main-input">
                     <div class="d-grid">
@@ -34,17 +53,23 @@
 						<input type="text" name="lname" id="w3lName" placeholder="Your Last Name" class="contact-input" required />
                     </div>
                     <div class="d-grid">
-                    	<input type="text" name="contact" id="w3lPhone" placeholder="Phone Number" class="contact-input" required />
-                        <input type="email" name="email" id="w3lSender" placeholder="Your Email Address" class="contact-input" required />
+                    	<input type="text" name="contact" id="w3lPhone" placeholder="Your Phone Number" class="contact-input" required />
+                        <input type="text" name="h_no" id="w3lSender" placeholder="Your House Number" class="contact-input" required />
                     </div>
                     <div class="d-grid">
-                    	<input type="text" name="password" id="w3lPhone" placeholder="Password" class="contact-input" required />
+                    	<input type="text" name="address" id="w3lPhone" placeholder="Your Address" class="contact-input" required />
+                        <input type="date" name="join_date" id="w3lSender" class="contact-input" required />
                     </div>
+                    <div class="d-grid">
+                    	<input type="email" name="email" id="w3lPhone" placeholder="Your Email Address" class="contact-input" required />
+                        <input type="password" name="password" id="w3lSender" placeholder="Your Password" class="contact-input" required />
+                    </div>
+                    
                 </div>
                <!-- <textarea class="contact-textarea" name="w3lMessage" id="w3lMessage"
                     placeholder="Type your message here" required></textarea> -->
                 <div class="text-left">
-                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="memberSignUp">Submit Now</button>
+                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="memberSignUp">Sign Up</button>
                 </div>
             </form>
         </div>

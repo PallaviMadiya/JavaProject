@@ -52,7 +52,7 @@
 			  		<a class="nav-link" class="dropbtn">Sign In<span class="sr-only">(current)</span></a>
 			  		<div class="dropdown-content">
 				    	<a class="nav-link" href="member-login.jsp">Member Sign In</a>
-				    	<a class="nav-link" href="manager-login.jsp">Admin Sign In</a>
+				    	<a class="nav-link" href="admin-login.jsp">Admin Sign In</a>
 			  		</div>
 				</div>
 			</li>
