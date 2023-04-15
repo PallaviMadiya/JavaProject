@@ -1,16 +1,17 @@
 'use strict';
 
 window.chartColors = {
-	navy: '#4755AB',
-	green: '#03c895',
-	danger: '#ff4f81',
-	blue: '#4A496E',
-	purple: '#B162AC',
-	grey: '#E7EDF6'
+	red: 'rgb(255, 99, 132)',
+	orange: 'rgb(255, 159, 64)',
+	yellow: 'rgb(255, 205, 86)',
+	green: 'rgb(75, 192, 192)',
+	blue: 'rgb(54, 162, 235)',
+	purple: 'rgb(153, 102, 255)',
+	grey: 'rgb(201, 203, 207)'
 };
 
 (function(global) {
-	var MONTHS = [
+	var Months = [
 		'January',
 		'February',
 		'March',
@@ -105,7 +106,7 @@ window.chartColors = {
 			var i, value;
 
 			for (i = 0; i < count; ++i) {
-				value = MONTHS[Math.ceil(i) % 12];
+				value = Months[Math.ceil(i) % 12];
 				values.push(value.substring(0, section));
 			}
 

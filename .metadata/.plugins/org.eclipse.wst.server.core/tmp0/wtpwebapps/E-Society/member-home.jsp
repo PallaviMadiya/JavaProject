@@ -1,3 +1,4 @@
+<%@page import="model.Member"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,6 +9,17 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+
+<%
+	if(session.getAttribute("memberData") != null)
+	{
+		m = (Member)session.getAttribute("memberData");
+	}
+	else
+	{
+		response.sendRedirect("member-login.jsp");
+	}
+%>
     <!-- main-slider -->
   <section class="w3l-main-slider" id="home">
     <div class="companies20-content">
@@ -18,7 +30,7 @@
               <div class="banner-info">
                 <div class="container">
                   <div class="banner-info-bg text-left">
-                    <h5>E-Society</h5>
+                    <h5>E-Society Member</h5>
                     <p>Keeps You Up To Date About Society Events.</p>
                     <a href="#read" class="view">View Details <span class="fa fa-long-arrow-right ml-1"
                         aria-hidden="true"></span></a>

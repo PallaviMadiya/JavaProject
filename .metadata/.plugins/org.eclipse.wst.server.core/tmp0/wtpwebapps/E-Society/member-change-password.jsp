@@ -8,6 +8,14 @@
 </head>
 <body>
 <%@include file="header.jsp" %>
+<%
+	if(session.getAttribute("memberData") != null){
+		m = (Member)session.getAttribute("memberData");
+	}else{
+		response.sendRedirect("index.jsp");
+	}
+%>
+		m = (Member)session.getAttribute("memberData");
 <!-- about breadcrumb -->
   <section class="w3l-about-breadcrumb text-left">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
@@ -27,8 +35,39 @@
       
       <h3 class="hny-title mb-lg-5 mb-4">Change Password</h3>
         <div class="contacts12-main mb-5">
+        <%
+		String msg = (String) request.getAttribute("msg");
+		%>
+		<%
+		if (msg != null) {
+		%>
+		<h3>
+			<%
+			out.print(msg);
+			%>
+		</h3>
+		<%
+		}
+		%>
+		<%
+		String msg1 = (String) request.getAttribute("msg1");
+		%>
+		<%
+		if (msg1 != null) {
+		%>
+		<h3>
+			<%
+			out.print(msg1);
+			%>
+		</h3>
+		<%
+		}
+		%>
             <form action="MemberController" method="post">
                 <div class="main-input">
+               		<div class="d-grid" >
+                    	<input type="hidden" name="mid" id="w3lPhone"  class="contact-input" value="<%=m.getId() %>" />
+                    </div>
 					<div class="d-grid" >
                     	<input type="password" name="oldPassword" id="w3lPhone" placeholder="Old Password" class="contact-input" required />
                     </div>

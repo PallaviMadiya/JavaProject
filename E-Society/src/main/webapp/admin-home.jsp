@@ -1,509 +1,405 @@
 <%@page import="model.Admin"%>
+<%@page import="model.Member"%>
 <%@page import="dao.AdminDao"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ include file="admin-header.jsp" %>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
 -->
-<!doctype html>
-<html lang="en">
-
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>E-Society Admin Home</title>
-
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="admin/assets/css/style-starter.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page">
+			<div class="col_3">
+        	<div class="col-md-3 widget widget1">
+        		<div class="r3_counter_box">
+                    <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
+                    <div class="stats">
+					<%List<Member> list = AdminDao.approveMemebersList(); %>
+					<%System.out.println(list.size()); %>
+					  <h5><strong><%=list.size() %></strong></h5>
+                      <span>Society Members</span>
+                    </div>
+                </div>
+        	</div>
+        	<div class="col-md-3 widget widget1">
+        		<div class="r3_counter_box">
+                    <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
+                    <div class="stats">
+                      <h5><strong>$1019</strong></h5>
+                      <span>Online Revenue</span>
+                    </div>
+                </div>
+        	</div>
+        	<div class="col-md-3 widget widget1">
+        		<div class="r3_counter_box">
+                    <i class="pull-left fa fa-money user2 icon-rounded"></i>
+                    <div class="stats">
+                      <h5><strong>$1012</strong></h5>
+                      <span>Expenses</span>
+                    </div>
+                </div>
+        	</div>
+        	<div class="col-md-3 widget widget1">
+        		<div class="r3_counter_box">
+                    <i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
+                    <div class="stats">
+                      <h5><strong>$450</strong></h5>
+                      <span>Expenditure</span>
+                    </div>
+                </div>
+        	 </div>
+        	<div class="col-md-3 widget">
+        		<div class="r3_counter_box">
+                    <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
+                    <div class="stats">
+                      <h5><strong>1450</strong></h5>
+                      <span>Total Users</span>
+                    </div>
+                </div>
+        	 </div>
+        	<div class="clearfix"> </div>
+		</div>
+		
+		<div class="row-one widgettable">
+			<div class="col-md-7 content-top-2 card">
+				<div class="agileinfo-cdr">
+					<div class="card-header">
+                        <h3>Weekly Sales</h3>
+                    </div>
+					
+						<div id="Linegraph" style="width: 98%; height: 350px">
+						</div>
+						
+				</div>
+			</div>
+			<div class="col-md-3 stat">
+				<div class="content-top-1">
+				<div class="col-md-6 top-content">
+					<h5>Sales</h5>
+					<label>1283+</label>
+				</div>
+				<div class="col-md-6 top-content1">	   
+					<div id="demo-pie-1" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
+				</div>
+				 <div class="clearfix"> </div>
+				</div>
+				<div class="content-top-1">
+				<div class="col-md-6 top-content">
+					<h5>Reviews</h5>
+					<label>2262+</label>
+				</div>
+				<div class="col-md-6 top-content1">	   
+					<div id="demo-pie-2" class="pie-title-center" data-percent="75"> <span class="pie-value"></span> </div>
+				</div>
+				 <div class="clearfix"> </div>
+				</div>
+				<div class="content-top-1">
+				<div class="col-md-6 top-content">
+					<h5>Visitors</h5>
+					<label>12589+</label>
+				</div>
+				<div class="col-md-6 top-content1">	   
+					<div id="demo-pie-3" class="pie-title-center" data-percent="90"> <span class="pie-value"></span> </div>
+				</div>
+				 <div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="col-md-2 stat">
+				<div class="content-top">
+					<div class="top-content facebook">
+						<a href="#"><i class="fa fa-facebook"></i></a>
+					</div>
+					<ul class="info">
+						<li class="col-md-6"><b>1,296</b><p>Friends</p></li>
+						<li class="col-md-6"><b>647</b><p>Likes</p></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="content-top">
+					<div class="top-content twitter">
+						<a href="#"><i class="fa fa-twitter"></i></a>
+					</div>
+					<ul class="info">
+						<li class="col-md-6"><b>1,997</b><p>Followers</p></li>
+						<li class="col-md-6"><b>389</b><p>Tweets</p></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				<div class="content-top">
+					<div class="top-content google-plus">
+						<a href="#"><i class="fa fa-google-plus"></i></a>
+					</div>
+					<ul class="info">
+						<li class="col-md-6"><b>1,216</b><p>Followers</p></li>
+						<li class="col-md-6"><b>321</b><p>shares</p></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+				
+				<div class="charts">
+					<div class="col-md-4 charts-grids widget">
+						<div class="card-header">
+							<h3>Bar chart</h3>
+						</div>
+						
+						<div id="container" style="width: 100%; height:270px;">
+							<canvas id="canvas"></canvas>
+						</div>
+						<button id="randomizeData">Randomize Data</button>
+						<button id="addDataset">Add Dataset</button>
+						<button id="removeDataset">Remove Dataset</button>
+						<button id="addData">Add Data</button>
+						<button id="removeData">Remove Data</button>
+						
+					</div>
+					
+					<div class="col-md-4 charts-grids widget states-mdl">
+						<div class="card-header">
+							<h3>Column & Line Graph</h3>
+						</div>
+						<div id="chartdiv"></div>
+					</div>
+			
+					<div class="clearfix"> </div>
+				</div>
+				
 	
-  <!-- google fonts -->
-  <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
-</head>
+	<!-- for amcharts js -->
+			<script src="js/amcharts.js"></script>
+			<script src="js/serial.js"></script>
+			<script src="js/export.min.js"></script>
+			<link rel="stylesheet" href="css/export.css" type="text/css" media="all" />
+			<script src="js/light.js"></script>
+	<!-- for amcharts js -->
 
-<%
-	Admin a = null;
-	if(session.getAttribute("adminData")!=null){
-	   a = (Admin)session.getAttribute("adminData");
-	}
-	else{
-	   response.sendRedirect("admin-login.jsp");
-	}
-%>
-
-<body class="sidebar-menu-collapsed">
-  <div class="se-pre-con"></div>
-  <section>
-  
-  <%@ include file="admin-header.jsp" %>
-  
-  <!-- main content start -->
-<div class="main-content">
-
-  <!-- content -->
-  <div class="container-fluid content-top-gap">
-
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb my-breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-      </ol>
-    </nav>
-    <div class="welcome-msg pt-3 pb-4">
-      <h1>Hi <span class="text-primary"><%=a.getName() %></span>, Welcome back</h1>
-      <p>Very detailed & featured admin.</p>
-    </div>
-
-    <!-- statistics data -->
-    <div class="statistics">
-      <div class="row">
-        <div class="col-xl-6 pr-xl-2">
-          <div class="row">
-            <div class="col-sm-6 pr-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-users"> </i>
-                <h3 class="text-primary number">29.75 M</h3>
-                <p class="stat-text">Total Users</p>
-              </div>
-            </div>
-            <div class="col-sm-6 pl-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-eye"> </i>
-                <h3 class="text-secondary number">51.25 K</h3>
-                <p class="stat-text">Daily Visitors</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-6 pl-xl-2">
-          <div class="row">
-            <div class="col-sm-6 pr-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-cloud-download"> </i>
-                <h3 class="text-success number">166.89 M</h3>
-                <p class="stat-text">Downloads</p>
-              </div>
-            </div>
-            <div class="col-sm-6 pl-sm-2 statistics-grid">
-              <div class="card card_border border-primary-top p-4">
-                <i class="lnr lnr-cart"> </i>
-                <h3 class="text-danger number">1,250k</h3>
-                <p class="stat-text">Purchased</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- //statistics data -->
-
-   
-    <!-- chatting -->
-    <div class="data-tables">
-      <div class="row">
-        <div class="col-lg-12 chart-grid mb-4">
-          <div class="card card_border p-4">
-            <div class="card-header chart-grid__header pl-0 pt-0">
-              Chatting
-            </div>
-            <div class="messaging">
-              <div class="inbox_msg">
-                <div class="inbox_people">
-                  <div class="headind_srch">
-                    <div class="srch_bar">
-                      <div class="stylish-input-group">
-                        <input type="text" class="search-bar" placeholder="Search Chat">
-                        <span class="input-group-addon">
-                          <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
-                        </span> </div>
-                    </div>
-                  </div>
-                  <div class="inbox_chat">
-                    <div class="chat_list active_chat">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="admin/assets/images/avatar5.jpg" alt="Alexander" class="img-fluid">
-                        </div>
-                        <div class="chat_ib">
-                          <h5>Alexander <span class="chat_date">1 hour ago</span></h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="chat_list">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="admin/assets/images/avatar3.jpg" alt="Anderson" class="img-fluid">
-                        </div>
-                        <div class="chat_ib">
-                          <h5>Anderson <span class="chat_date">5 hours ago</span></h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="chat_list">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="admin/assets/images/avatar5.jpg" alt="Isabella" class="img-fluid">
-                        </div>
-                        <div class="chat_ib">
-                          <h5>Isabella <span class="chat_date">Yesterday</span></h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="chat_list">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="admin/assets/images/avatar4.jpg" alt="Charlotte" class="img-fluid">
-                        </div>
-                        <div class="chat_ib">
-                          <h5>Charlotte <span class="chat_date">Mar 04</span></h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="chat_list">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="admin/assets/images/avatar2.jpg" alt="Davidson" class="img-fluid">
-                        </div>
-                        <div class="chat_ib">
-                          <h5>Davidson <span class="chat_date">Feb 18</span></h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="chat_list">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="admin/assets/images/avatar1.jpg" alt="Elexa ker" class="img-fluid">
-                        </div>
-                        <div class="chat_ib">
-                          <h5>Elexa ker <span class="chat_date">Feb 04</span></h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="chat_list">
-                      <div class="chat_people">
-                        <div class="chat_img"> <img src="admin/assets/images/avatar4.jpg" alt="Charlotte" class="img-fluid">
-                        </div>
-                        <div class="chat_ib">
-                          <h5>Charlotte <span class="chat_date">Jan 28</span></h5>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="mesgs">
-                  <div class="msg_history">
-                    <div class="incoming_msg">
-                      <div class="incoming_msg_img"> <img src="admin/assets/images/avatar5.jpg" alt="Alexander"
-                          class="img-fluid"> </div>
-                      <div class="received_msg">
-                        <div class="received_withd_msg">
-                          <p>Coming along nicely, we've got a Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                          </p>
-                          <span class="time_date"> 10:05 AM | Mar 9</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="outgoing_msg">
-                      <div class="sent_msg">
-                        <p>Great start, I've added some Lorem ipsum dolor sit amet. </p>
-                        <span class="time_date"> 12:15 PM | Mar 9</span>
-                      </div>
-                    </div>
-                    <div class="incoming_msg">
-                      <div class="incoming_msg_img"> <img src="admin/assets/images/avatar5.jpg" alt="Alexander"
-                          class="img-fluid"> </div>
-                      <div class="received_msg">
-                        <div class="received_withd_msg">
-                          <p>Sed ut perspiciatis unde omnis iste natus error sit</p>
-                          <span class="time_date"> 09:16 AM | Yesterday</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="outgoing_msg">
-                      <div class="sent_msg">
-                        <p>But I must explain to you.</p>
-                        <span class="time_date"> 03:15 PM | Today</span>
-                      </div>
-                    </div>
-                    <div class="incoming_msg">
-                      <div class="incoming_msg_img"> <img src="admin/assets/images/avatar5.jpg" alt="Alexander"
-                          class="img-fluid"> </div>
-                      <div class="received_msg">
-                        <div class="received_withd_msg">
-                          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                            voluptatum deleniti atque corrupti quos dolores.</p>
-                          <span class="time_date"> 03:16 PM | Today</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="type_msg">
-                    <div class="input_msg_write">
-                      <input type="text" class="write_msg" placeholder="Type a message" />
-                      <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o"
-                          aria-hidden="true"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- //chatting -->
-
-    <!-- accordions -->
-    <div class="accordions">
-      <div class="row">
-        <!-- accordion style 1 -->
-        <div class="col-lg-12 mb-4">
-          <div class="card card_border">
-            <div class="card-header chart-grid__header">
-              Bootstrap Accordions
-            </div>
-            <div class="card-body">
-              <div class="accordion" id="accordionExample">
-                <div class="card">
-                  <div class="card-header bg-white p-0" id="headingOne">
-                    <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseOne"
-                      aria-expanded="true" aria-controls="collapseOne">Collapsed accordion heading </a>
-                  </div>
-
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body para__style">
-                      Nulla tincidunt quam justo, in tincidunt tortor sollicitudin a. Donec porta posuere
-                      libero sed varius. Phasellus hendrerit commodo sem, at sagittis sapien semper quis.
-                      Etiam vitae facilisis nibh. Maecenas erat nisl, blandit at nunc a, lobortis sagittis
-                      ex. Maecenas pharetra pulvinar tincidunt.
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header bg-white p-0" id="headingTwo">
-                    <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseTwo"
-                      aria-expanded="false" aria-controls="collapseTwo">Click here to collapse accordion</a>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body para__style">
-                      Nulla tincidunt quam justo, in tincidunt tortor sollicitudin a. Donec porta posuere
-                      libero sed varius. Phasellus hendrerit commodo sem, at sagittis sapien semper quis.
-                      Etiam vitae facilisis nibh. Maecenas erat nisl, blandit at nunc a, lobortis sagittis
-                      ex. Maecenas pharetra pulvinar tincidunt.
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header bg-white p-0" id="headingThree">
-                    <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseThree"
-                      aria-expanded="false" aria-controls="collapseThree">Click here to
-                      collapse accordion</a>
-                  </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                    data-parent="#accordionExample">
-                    <div class="card-body para__style">
-                      Nulla tincidunt quam justo, in tincidunt tortor sollicitudin a. Donec porta posuere
-                      libero sed varius. Phasellus hendrerit commodo sem, at sagittis sapien semper quis.
-                      Etiam vitae facilisis nibh. Maecenas erat nisl, blandit at nunc a, lobortis sagittis
-                      ex. Maecenas pharetra pulvinar tincidunt.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- //accordion style 1 -->
-      </div>
-    </div>
-    <!-- //accordions -->
-
-    <!-- modals -->
-    <section class="template-cards">
-      <div class="card card_border">
-        <div class="cards__heading">
-          <h3>Modals - <span>2 different types of bootstrap modals</span></h3>
-        </div>
-        <div class="card-body pb-0">
-          <div class="row">
-            <div class="col-lg-6 pr-lg-2 chart-grid">
-              <div class="card text-center card_border">
-                <div class="card-header chart-grid__header">
-                  Demo modal
-                </div>
-                <div class="card-body">
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary btn-style" data-toggle="modal"
-                    data-target="#exampleModal">
-                    Launch demo
-                  </button>
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          ...
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-success">Save changes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 chart-grid">
-              <div class="card text-center card_border">
-                <div class="card-header chart-grid__header">
-                  Vertical centered
-                </div>
-                <div class="card-body">
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary btn-style" data-toggle="modal"
-                    data-target="#exampleModalCenter">
-                    Launch demo
-                  </button>
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                          ...
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-success">Save changes</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- //modals -->
-
-  </div>
-  <!-- //content -->
-</div>
-<!-- main content end-->
-</section>
-  <!--footer section start-->
-<footer class="dashboard">
-  <p>&copy 2020 Collective. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank"
-      class="text-primary">W3layouts.</a></p>
-</footer>
-<!--footer section end-->
-<!-- move top -->
-<button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
-  <span class="fa fa-angle-up"></span>
-</button>
-<script>
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function () {
-    scrollFunction()
-  };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      document.getElementById("movetop").style.display = "block";
-    } else {
-      document.getElementById("movetop").style.display = "none";
-    }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-</script>
-<!-- /move top -->
- <!-- move top -->
-<button onclick="topFunction()" id="movetop" class="bg-primary" title="Go to top">
-  <span class="fa fa-angle-up"></span>
-
-<script src="admin/assets/js/jquery-3.3.1.min.js"></script>
-<script src="admin/assets/js/jquery-1.10.2.min.js"></script>
-
-<!-- chart js -->
-<script src="admin/assets/js/Chart.min.js"></script>
-<script src="admin/assets/js/utils.js"></script>
-<!-- //chart js -->
-
-<!-- Different scripts of charts.  Ex.Barchart, Linechart -->
-<script src="admin/assets/js/bar.js"></script>
-<script src="admin/assets/js/linechart.js"></script>
-<!-- //Different scripts of charts.  Ex.Barchart, Linechart -->
-
-
-<script src="admin/assets/js/jquery.nicescroll.js"></script>
-<script src="admin/assets/js/scripts.js"></script>
-
-<!-- close script -->
-<script>
-  var closebtns = document.getElementsByClassName("close-grid");
-  var i;
-
-  for (i = 0; i < closebtns.length; i++) {
-    closebtns[i].addEventListener("click", function () {
-      this.parentElement.style.display = 'none';
-    });
-  }
-</script>
-<!-- //close script -->
-
-<!-- disable body scroll when navbar is in active -->
-<script>
-  $(function () {
-    $('.sidebar-menu-collapsed').click(function () {
-      $('body').toggleClass('noscroll');
-    })
-  });
-</script>
-<!-- disable body scroll when navbar is in active -->
-
- <!-- loading-gif Js -->
- <script src="admin/assets/js/modernizr.js"></script>
- <script>
-     $(window).load(function () {
-         // Animate loader off screen
-         $(".se-pre-con").fadeOut("slow");;
-     });
- </script>
- <!--// loading-gif Js -->
-
-<!-- Bootstrap Core JavaScript -->
-<script src="admin/assets/js/bootstrap.min.js"></script>
-
-</body>
-
-</html>
-  
+    <script  src="js/index1.js"></script>
+	
+		<div class="charts">		
+			<div class="mid-content-top charts-grids">
+				<div class="middle-content">
+						<h4 class="title">Carousel Slider</h4>
+					<!-- start content_slider -->
+					<div id="owl-demo" class="owl-carousel text-center">
+						<div class="item">
+							<img class="lazyOwl img-responsive" data-src="images/slider1.jpg" alt="name">
+						</div>
+						<div class="item">
+							<img class="lazyOwl img-responsive" data-src="images/slider2.jpg" alt="name">
+						</div>
+						<div class="item">
+							<img class="lazyOwl img-responsive" data-src="images/slider3.jpg" alt="name">
+						</div>
+						<div class="item">
+							<img class="lazyOwl img-responsive" data-src="images/slider4.jpg" alt="name">
+						</div>
+						<div class="item">
+							<img class="lazyOwl img-responsive" data-src="images/slider5.jpg" alt="name">
+						</div>
+						<div class="item">
+							<img class="lazyOwl img-responsive" data-src="images/slider6.jpg" alt="name">
+						</div>
+						<div class="item">
+							<img class="lazyOwl img-responsive" data-src="images/slider7.jpg" alt="name">
+						</div>
+						
+					</div>
+				</div>
+					<!--//sreen-gallery-cursual---->
+			</div>
+		</div>
+		
+		<div class="col_1">
+			<div class="col-md-4 span_8">
+				<div class="activity_box">
+					<h2>Inbox</h2>
+					<div class="scrollbar" id="style-1">
+						<div class="activity-row">
+							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/></div>
+							<div class="col-xs-7 activity-desc">
+								<h5><a href="#">Michael Chris</a></h5>
+								<p>Hey ! There I'm available.</p>
+							</div>
+							<div class="col-xs-2 activity-desc1"><h6>12:05 PM</h6></div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="activity-row">
+							<div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt=""/></div>
+							<div class="col-xs-7 activity-desc">
+								<h5><a href="#">Alexander</a></h5>
+								<p>Hey ! There I'm available.</p>
+							</div>
+							<div class="col-xs-2 activity-desc1"><h6>12:06 PM</h6></div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="activity-row">
+							<div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt=""/></div>
+							<div class="col-xs-7 activity-desc">
+								<h5><a href="#">Daniel Lucas</a></h5>
+								<p>Hey ! There I'm available.</p>
+							</div>
+							<div class="col-xs-2 activity-desc1"><h6>01:30 PM</h6></div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="activity-row">
+							<div class="col-xs-3 activity-img"><img src='images/2.jpg' class="img-responsive" alt=""/></div>
+							<div class="col-xs-7 activity-desc">
+								<h5><a href="#">Jackson Jacob</a></h5>
+								<p>Hey ! There I'm available.</p>
+							</div>
+							<div class="col-xs-2 activity-desc1"><h6>01:50 PM</h6></div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="activity-row">
+							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/></div>
+							<div class="col-xs-7 activity-desc">
+								<h5><a href="#">David Samuel</a></h5>
+								<p>Hey ! There I'm available.</p>
+							</div>
+							<div class="col-xs-2 activity-desc1"><h6>12:20 PM</h6></div>
+							<div class="clearfix"> </div>
+						</div>
+						
+						<div class="activity-row">
+							<div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt=""/></div>
+							<div class="col-xs-7 activity-desc">
+								<h5><a href="#">laura Smith</a></h5>
+								<p>Hey ! There I'm available.</p>
+							</div>
+							<div class="col-xs-2 activity-desc1"><h6>12:50 PM</h6></div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<form action="#" method="post">
+						<input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+						<input type="submit" value="Submit"/>		
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4 span_8">
+				<div class="activity_box activity_box1">
+					<h3>chat</h3>
+					<div class="scrollbar" id="style-3">
+						<div class="activity-row activity-row1">
+							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/><span>06:01 AM</span></div>
+							<div class="col-xs-5 activity-img1">
+								<div class="activity-desc-sub">
+									<h5>Michael Chris</h5>
+									<p>Hello ! this is Michael chris</p>
+								</div>
+							</div>
+							<div class="col-xs-4 activity-desc1"></div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="activity-row activity-row1">
+							<div class="col-xs-2 activity-desc1"></div>
+							<div class="col-xs-7 activity-img2">
+								<div class="activity-desc-sub1">
+									<h5>Alexander</h5>
+									<p>Hi,How are you ? What about our next meeting?</p>
+								</div>
+							</div>
+							<div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt=""/><span>06:02 AM</span></div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="activity-row activity-row1">
+							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/><span>06:05 AM</span></div>
+							<div class="col-xs-5 activity-img1">
+								<div class="activity-desc-sub">
+									<h5>Michael Chris</h5>
+									<p>Yeah fine, Hope you the same</p>
+								</div>
+							</div>
+							<div class="col-xs-4 activity-desc1"></div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="activity-row activity-row1">
+							<div class="col-xs-2 activity-desc1"></div>
+							<div class="col-xs-7 activity-img2">
+								<div class="activity-desc-sub1">
+									<h5>Alexander</h5>
+									<p>Wow that's great</p>
+								</div>
+							</div>
+							<div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt=""/><span>06:20 PM</span></div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<form action="#" method="post">
+						<input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+						<input type="submit" value="Send"/>		
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4 span_8">
+				<div class="activity_box activity_box2">
+					<h3>todo</h3>
+					<div class="scrollbar" id="style-2">
+						<div class="activity-row activity-row1">
+							<div class="single-bottom">
+								<ul>
+									<li>
+										<input type="checkbox"  id="brand" value="">
+										<label for="brand"><span></span> Integer sollicitudin lacinia condimentum.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand1" value="">
+										<label for="brand1"><span></span> ligula sit amet hendrerit init lorem.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand2" value="">
+										<label for="brand2"><span></span>  Donec aliquam dolor eu augue condimentum.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand9" value="">
+										<label for="brand9"><span></span>  at tristique Pain that produces no resultant.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand8" value="">
+										<label for="brand8"><span></span> Nulla finibus rhoncus turpis quis tristique.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand7" value="">
+										<label for="brand7"><span></span> Cupidatat non proident Praising pain.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand3" value="">
+										<label for="brand3"><span></span>  libero vel elementum euismod, mauris tellus</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand4" value="">
+										<label for="brand4"><span></span> Donec aliquam dolor eu augue condimentum.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand5" value="">
+										<label for="brand5"><span></span> Orci varius natoque penatibus et magnis dis.</label>
+									</li>
+									<li>
+										<input type="checkbox"  id="brand6" value="">
+										<label for="brand6"><span></span> parturient Dolorem ipsum quia.</label>
+									</li>
+									
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<form action="#" method="post">
+						<input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+						<input type="submit" value="Submit"/>		
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="clearfix"> </div>
+			
+		</div>
+				
+			</div>
+		</div>  
+		
+<%@ include file="admin-footer.jsp" %>

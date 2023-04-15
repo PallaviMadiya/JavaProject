@@ -63,6 +63,7 @@ public class AdminController extends HttpServlet {
 					HttpSession session = request.getSession();
 					session.setAttribute("adminData", a1);
 					request.getRequestDispatcher("admin-home.jsp").forward(request, response);
+					System.out.println(a1.getName());
 				}
 			}
 			else

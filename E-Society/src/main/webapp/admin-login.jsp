@@ -1,39 +1,120 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html lang="en">
+
+<!DOCTYPE HTML>
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Required meta tags -->
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Glance Design Dashboard an Admin Panel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-  <title>Collective Admin Panel a Flat Bootstrap Responsive Website Template | Login :: W3Layouts</title>
+<!-- Bootstrap Core CSS -->
+<link href="admin/assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="admin/assets/css/style-starter.css">
+<!-- Custom CSS -->
+<link href="admin/assets/css/style.css" rel='stylesheet' type='text/css' />
 
-  <!-- google fonts -->
-  <link href="admin/assets/css/style-starter.css" rel="stylesheet">
-<div id="_bsa_srv-CKYI627U_0"></div><div id="_bsa_srv-CKYI653J_1"></div></head>
+<!-- font-awesome icons CSS -->
+<link href="admin/assets/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons CSS-->
 
-<body>
-  <section>
-    <!-- content -->
-    <div class="">
-        <!-- login form -->
-        <section class="login-form py-md-5 py-3">
-            <div class="card card_border p-md-4">
-                <div class="card-body">
-                
-                    <!-- form -->
-                    <form action="AdminController" method="post">
-                        <div class="login__header text-center mb-lg-5 mb-4">
-                            <h3 class="login__title mb-2">Sign In</h3>
-                            
-                        </div>
-                        
-                        <%
+<!-- side nav css file -->
+<link href='admin/assets/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css'/>
+<!-- //side nav css file -->
+ 
+ <!-- js-->
+<script src="admin/assets/js/jquery-1.11.1.min.js"></script>
+<script src="admin/assets/js/modernizr.custom.js"></script>
+
+<!--webfonts-->
+<link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+<!--//webfonts--> 
+
+<!-- chart -->
+<script src="admin/assets/js/Chart.js"></script>
+<!-- //chart -->
+
+<!-- Metis Menu -->
+<script src="admin/assets/js/metisMenu.min.js"></script>
+<script src="admin/assets/js/custom.js"></script>
+<link href="admin/assets/css/custom.css" rel="stylesheet">
+<!--//Metis Menu -->
+<style>
+#chartdiv {
+  width: 100%;
+  height: 295px;
+}
+</style>
+<!--pie-chart --><!-- index page sales reviews visitors pie chart -->
+<script src="admin/assets/js/pie-chart.js" type="text/javascript"></script>
+ <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#demo-pie-1').pieChart({
+                barColor: '#2dde98',
+                trackColor: '#eee',
+                lineCap: 'round',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-2').pieChart({
+                barColor: '#8e43e7',
+                trackColor: '#eee',
+                lineCap: 'butt',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-3').pieChart({
+                barColor: '#ffc168',
+                trackColor: '#eee',
+                lineCap: 'square',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+           
+        });
+
+    </script>
+<!-- //pie-chart --><!-- index page sales reviews visitors pie chart -->
+
+	<!-- requried-jsfiles-for owl -->
+					<link href="css/owl.carousel.css" rel="stylesheet">
+					<script src="js/owl.carousel.js"></script>
+						<script>
+							$(document).ready(function() {
+								$("#owl-demo").owlCarousel({
+									items : 3,
+									lazyLoad : true,
+									autoPlay : true,
+									pagination : true,
+									nav:true,
+								});
+							});
+						</script>
+					<!-- //requried-jsfiles-for owl -->
+</head> 
+
+<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page login-page ">
+				<h2 class="title1">Sign In</h2>
+				<div class="widget-shadow">
+					<div class="login-body">
+						<form action="AdminController" method="post">
+						
+						<%
         					String msg1 = (String)request.getAttribute("msg1");
         					if(msg1 != null)
         					{
@@ -53,34 +134,60 @@
         					}
         				%>
                 		<br>
-                        
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="input__label">Email</label>
-                            <input type="email" name="email" class="form-control login_text_field_bg input-style" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="" autofocus="">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1" class="input__label">Password</label>
-                            <input type="password" name="password" class="form-control login_text_field_bg input-style" id="exampleInputPassword1" placeholder="" required="">
-                        </div>
-                       
-                        <div class="d-flex align-items-center flex-wrap justify-content-between">
-                            <button type="submit" name="action" value="AdminSignIn" class="btn btn-primary btn-style mt-4">Sign In</button>
-                            
-                        </div>
-                    </form>
-                    <!-- //form -->
-                    <p class="backtohome mt-4"><a href="index.jsp" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back to Home </a></p>
-                </div>
-            </div>
-        </section>
-
-    </div>
-    <!-- //content -->
-
-</section>
-
-
-
-
-
-</body></html>
+						
+							<input type="email" class="user" name="email" placeholder="Enter Your Email" required="">
+							<input type="password" name="password" class="lock" placeholder="Enter Your Password" required="">
+							<div class="forgot-grid">
+								
+								
+								<div class="clearfix"> </div>
+							</div>
+							<button type="submit" name="action" value="AdminSignIn" class="btn btn-primary btn-style mt-4">Sign In</button>
+							
+						</form>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		
+<!-- side nav js -->
+	<script src='admin/assets/js/SidebarNav.min.js' type='text/javascript'></script>
+	<script>
+      $('.sidebar-menu').SidebarNav()
+    </script>
+	<!-- //side nav js -->
+	
+	<!-- Classie --><!-- for toggle left push menu script -->
+		<script src="admin/assets/js/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+				
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+	</script>
+	<!-- //Classie --><!-- //for toggle left push menu script -->
+		
+	<!--scrolling js-->
+	<script src="admin/assets/js/jquery.nicescroll.js"></script>
+	<script src="admin/assets/js/scripts.js"></script>
+	<!--//scrolling js-->
+	
+	<!-- Bootstrap Core JavaScript -->
+   <script src="admin/assets/js/bootstrap.js"> </script>
+	<!-- //Bootstrap Core JavaScript -->
+   
+   
+  

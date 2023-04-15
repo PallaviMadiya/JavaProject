@@ -26,6 +26,10 @@
     <div class="container py-lg-5 py-md-4">
       
       <h3 class="hny-title mb-lg-5 mb-4">Forget Password</h3>
+      <% String msg = (String)request.getAttribute("msg"); %>
+            <% if(msg!=null){ %>
+            	<h3><%=msg %></h3>
+        <% } %>    
         <div class="contacts12-main mb-5">
             <form action="MemberController" method="post">
                 <div class="main-input">
@@ -35,7 +39,7 @@
                     </div>                    
                 </div>
                 <div class="text-left" style="align: left">
-                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="forgetPassword">Send OTP</button>
+                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="get otp">Send OTP</button>
                 </div>
             </form>
         </div>

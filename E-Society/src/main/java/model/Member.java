@@ -2,14 +2,14 @@ package model;
 
 public class Member {
 
-	private int id,h_no;
+	private int mid,h_no;
 	private String fname,lname,address,join_date,email,password,register_status;
 	private long contact;
 	public int getId() {
-		return id;
+		return mid;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setmid(int mid) {
+		this.mid = mid;
 	}
 	public int getH_no() {
 		return h_no;
@@ -68,7 +68,7 @@ public class Member {
 	
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", h_no=" + h_no + ", fname=" + fname + ", lname=" + lname + ", address=" + address
+		return "Member [mid=" + mid + ", h_no=" + h_no + ", fname=" + fname + ", lname=" + lname + ", address=" + address
 				+ ", join_date=" + join_date + ", email=" + email + ", password=" + password + ", register_status="
 				+ register_status + ", contact=" + contact + "]";
 	}

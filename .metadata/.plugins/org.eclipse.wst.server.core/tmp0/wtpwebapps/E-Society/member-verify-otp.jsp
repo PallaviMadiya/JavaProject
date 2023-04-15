@@ -26,16 +26,23 @@
     <div class="container py-lg-5 py-md-4">
       
       <h3 class="hny-title mb-lg-5 mb-4">Validate OTP</h3>
+      <% String msg = (String)request.getAttribute("msg");%>
+            <%if(msg!=null){ %>
+            	<h3><%out.print(msg); %></h3>
+            <%} %>
         <div class="contacts12-main mb-5">
             <form action="MemberController" method="post">
                 <div class="main-input">
-                   
+                   <%String email = (String)request.getAttribute("email"); %>
+                   <%int otp = (Integer)request.getAttribute("otp"); %>
+                   <input type="hidden" name="email" value="<%=email%>">
+                   <input type="hidden" name="otp1" value="<%=otp%>">
                     <div class="d-grid">
-                        <input type="number" name="otp" id="w3lSender" placeholder="Enter Validate OTP " class="contact-input" required />
+                        <input type="number" name="otp2" id="w3lSender" placeholder="Enter Validate OTP " class="contact-input" required />
                     </div>                    
                 </div>
                 <div class="text-left" style="align: left">
-                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="validateOtp">Validate OTP</button>
+                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="verify otp">Validate OTP</button>
                 </div>
             </form>
         </div>

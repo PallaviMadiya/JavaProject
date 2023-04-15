@@ -26,10 +26,16 @@
     <div class="container py-lg-5 py-md-4">
       
       <h3 class="hny-title mb-lg-5 mb-4">Set New Password</h3>
+        <% String msg = (String)request.getAttribute("msg"); %>
+            <%if(msg!=null){ %>
+            	<h3><%out.print(msg); %></h3>
+            <%} %>
         <div class="contacts12-main mb-5">
+      
             <form action="MemberController" method="post">
                 <div class="main-input">
-
+					<%String email = (String)request.getAttribute("email"); %>
+					<input type="hidden" name="email" value="<%=email %>">
                     <div class="d-grid" >
                     	<input type="password" name="newPassword" id="w3lPhone" placeholder="New Password" class="contact-input" required />
                     </div>

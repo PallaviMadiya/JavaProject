@@ -28,20 +28,53 @@
       <h3 class="hny-title mb-lg-5 mb-4">Member Sign In</h3>
         <div class="contacts12-main mb-5">
             <form action="MemberController" method="post">
+            			<%
+        					String msg1 = (String)request.getAttribute("msg1");
+        					if(msg1 != null)
+        					{
+        				%>
+     					<h4><%=msg1 %></h4>
+        				<%
+        					}
+        				%>
+        		
+        				<%
+        					String msg2 = (String)request.getAttribute("msg2");
+        					if(msg2 != null)
+        					{
+        				%>
+     					<h4><%=msg2 %></h4>
+        				<%
+        					}
+        				%>
+        				
+        				<%
+        					String msg3 = (String)request.getAttribute("msg3");
+        					if(msg3 != null)
+        					{
+        				%>
+     					<h4><%=msg3 %></h4>
+        				<%
+        					}
+        				%>
+                		<br>
+				
                 <div class="main-input">
                    
                     <div class="d-grid">
                         <input type="email" name="email" id="w3lSender" placeholder="Your Email Address" class="contact-input" required />
                     </div>
                     <div class="d-grid" >
-                    	<input type="text" name="password" id="w3lPhone" placeholder="Password" class="contact-input" required />
+                    	<input type="password" name="password" id="w3lPhone" placeholder="Your Password" class="contact-input" required />
                     </div>
                 </div>
                <!-- <textarea class="contact-textarea" name="w3lMessage" id="w3lMessage"
                     placeholder="Type your message here" required></textarea> -->
-                <div class="text-left" style="align: left">
-                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="memberSignUp">Submit Now</button>
+                <div class="text-left" >
+                    <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="memberSignIn">Member Sign In</button>
+     	            <sapn style="margin-left:250px;"><a href="member-forget-password.jsp" >Forget Password?</a></sapn>
                 </div>
+                
             </form>
         </div>
      </div>

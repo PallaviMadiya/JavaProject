@@ -1,287 +1,438 @@
+<%@page import="model.Admin"%>
+<%@page import="dao.AdminDao"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<head>
-<meta charset="ISO-8859-1">
-  <!-- Required meta tags -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <title>E-Society Admin Header</title>
-
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="admin/assets/css/style-starter.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-  <!-- google fonts -->
-  <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
-</head>
+<!DOCTYPE HTML>
 <html>
-<body class="sidebar-menu-collapsed">
-  <div class="se-pre-con"></div>
+<head>
+<title>Admin Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-  <!-- sidebar menu start -->
-  <div class="sidebar-menu sticky-sidebar-menu">
+<!-- Bootstrap Core CSS -->
+<link href="admin/assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
 
-    <!-- logo start -->
-    <div class="logo">
-      <h1><a href="index.html">Collective</a></h1>
-    </div>
+<!-- Custom CSS -->
+<link href="admin/assets/css/style.css" rel='stylesheet' type='text/css' />
 
-  <!-- if logo is image enable this -->
-    <!-- image logo --
-    <div class="logo">
-      <a href="index.html">
-        <img src="image-path" alt="Your logo" title="Your logo" class="img-fluid" style="height:35px;" />
-      </a>
-    </div>
-    <!-- //image logo -->
+<!-- font-awesome icons CSS -->
+<link href="admin/assets/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons CSS-->
 
-    <div class="logo-icon text-center">
-      <a href="index.html" title="logo"><img src="admin/assets/images/logo.png" alt="logo-icon"> </a>
-    </div>
-    <!-- //logo end -->
+<!-- side nav css file -->
+<link href='admin/assets/css/SidebarNav.min.css' media='all' rel='stylesheet' type='text/css'/>
+<!-- //side nav css file -->
+ 
+ <!-- js-->
+<script src="admin/assets/js/jquery-1.11.1.min.js"></script>
+<script src="admin/assets/js/modernizr.custom.js"></script>
 
-    <div class="sidebar-menu-inner">
+<!--webfonts-->
+<link href="//fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+<!--//webfonts--> 
 
-      <!-- sidebar nav start -->
-      <ul class="nav nav-pills nav-stacked custom-nav">
-        <li class="active"><a href="index.html"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
-        </li>
-        <li class="menu-list">
-          <a href="#"><i class="fa fa-cogs"></i>
-            <span>Elements <i class="lnr lnr-chevron-right"></i></span></a>
-          <ul class="sub-menu-list">
-            <li><a href="carousels.html">Carousels</a> </li>
-            <li><a href="cards.html">Default cards</a> </li>
-            <li><a href="people.html">People cards</a></li>
-          </ul>
-        </li>
-        <li><a href="pricing.html"><i class="fa fa-table"></i> <span>Pricing tables</span></a></li>
-        <li><a href="blocks.html"><i class="fa fa-th"></i> <span>Content blocks</span></a></li>
-        <li><a href="forms.html"><i class="fa fa-file-text"></i> <span>Forms</span></a></li>
-      </ul>
-      <!-- //sidebar nav end -->
-      <!-- toggle button start -->
-      <a class="toggle-btn">
-        <i class="fa fa-angle-double-left menu-collapsed__left"><span>Collapse Sidebar</span></i>
-        <i class="fa fa-angle-double-right menu-collapsed__right"></i>
-      </a>
-      <!-- //toggle button end -->
-    </div>
-  </div>
-  <!-- //sidebar menu end -->
-  
+<!-- chart -->
+<script src="admin/assets/js/Chart.js"></script>
+<!-- //chart -->
 
- <!-- header-starts -->
-  <div class="header sticky-header">
+<!-- Metis Menu -->
+<script src="admin/assets/js/metisMenu.min.js"></script>
+<script src="admin/assets/js/custom.js"></script>
+<link href="admin/assets/css/custom.css" rel="stylesheet">
+<!--//Metis Menu -->
+<style>
+#chartdiv {
+  width: 100%;
+  height: 295px;
+}
+</style>
+<!--pie-chart --><!-- index page sales reviews visitors pie chart -->
+<script src="admin/assets/js/pie-chart.js" type="text/javascript"></script>
+ <script type="text/javascript">
 
-    <!-- notification menu start -->
-    <div class="menu-right">
-      <div class="navbar user-panel-top">
-        <div class="search-box">
-          <form action="#search-results.html" method="get">
-            <input class="search-input" placeholder="Search Here..." type="search" id="search">
-            <button class="search-submit" value=""><span class="fa fa-search"></span></button>
-          </form>
-        </div>
-        <div class="user-dropdown-details d-flex">
-          <div class="profile_details_left">
-            <ul class="nofitications-dropdown">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-                    class="fa fa-bell-o"></i><span class="badge blue">3</span></a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="notification_header">
-                      <h3>You have 3 new notifications</h3>
-                    </div>
-                  </li>
-                  <li><a href="#" class="grid">
-                      <div class="user_img"><img src="admin/assets/images/avatar1.jpg" alt=""></div>
-                      <div class="notification_desc">
-                        <p>Johnson purchased template</p>
-                        <span>Just Now</span>
-                      </div>
-                    </a></li>
-                  <li class="odd"><a href="#" class="grid">
-                      <div class="user_img"><img src="admin/assets/images/avatar2.jpg" alt=""></div>
-                      <div class="notification_desc">
-                        <p>New customer registered </p>
-                        <span>1 hour ago</span>
-                      </div>
-                    </a></li>
-                  <li><a href="#" class="grid">
-                      <div class="user_img"><img src="admin/assets/images/avatar3.jpg" alt=""></div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor sit amet </p>
-                        <span>2 hours ago</span>
-                      </div>
-                    </a></li>
-                  <li>
-                    <div class="notification_bottom">
-                      <a href="#all" class="bg-primary">See all notifications</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-                    class="fa fa-comment-o"></i><span class="badge blue">4</span></a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <div class="notification_header">
-                      <h3>You have 4 new messages</h3>
-                    </div>
-                  </li>
-                  <li><a href="#" class="grid">
-                      <div class="user_img"><img src="admin/assets/images/avatar1.jpg" alt=""></div>
-                      <div class="notification_desc">
-                        <p>Johnson purchased template</p>
-                        <span>Just Now</span>
-                      </div>
-                    </a></li>
-                  <li class="odd"><a href="#" class="grid">
-                      <div class="user_img"><img src="admin/assets/images/avatar2.jpg" alt=""></div>
-                      <div class="notification_desc">
-                        <p>New customer registered </p>
-                        <span>1 hour ago</span>
-                      </div>
-                    </a></li>
-                  <li><a href="#" class="grid">
-                      <div class="user_img"><img src="admin/assets/images/avatar3.jpg" alt=""></div>
-                      <div class="notification_desc">
-                        <p>Lorem ipsum dolor sit amet </p>
-                        <span>2 hours ago</span>
-                      </div>
-                    </a></li>
-                  <li><a href="#" class="grid">
-                      <div class="user_img"><img src="admin/assets/images/avatar1.jpg" alt=""></div>
-                      <div class="notification_desc">
-                        <p>Johnson purchased template</p>
-                        <span>Just Now</span>
-                      </div>
-                    </a></li>
-                  <li>
-                    <div class="notification_bottom">
-                      <a href="#all" class="bg-primary">See all messages</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+        $(document).ready(function () {
+            $('#demo-pie-1').pieChart({
+                barColor: '#2dde98',
+                trackColor: '#eee',
+                lineCap: 'round',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-2').pieChart({
+                barColor: '#8e43e7',
+                trackColor: '#eee',
+                lineCap: 'butt',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+            $('#demo-pie-3').pieChart({
+                barColor: '#ffc168',
+                trackColor: '#eee',
+                lineCap: 'square',
+                lineWidth: 8,
+                onStep: function (from, to, percent) {
+                    $(this.element).find('.pie-value').text(Math.round(percent) + '%');
+                }
+            });
+
+           
+        });
+
+    </script>
+<!-- //pie-chart --><!-- index page sales reviews visitors pie chart -->
+
+	<!-- requried-jsfiles-for owl -->
+					<link href="admin/assets/css/owl.carousel.css" rel="stylesheet">
+					<script src="admin/assets/js/owl.carousel.js"></script>
+						<script>
+							$(document).ready(function() {
+								$("#owl-demo").owlCarousel({
+									items : 3,
+									lazyLoad : true,
+									autoPlay : true,
+									pagination : true,
+									nav:true,
+								});
+							});
+						</script>
+					<!-- //requried-jsfiles-for owl -->
+</head> 
+<body class="cbp-spmenu-push">
+
+<%
+	Admin a = null;
+	if(session.getAttribute("adminData")!=null)
+	{
+		a = (Admin)session.getAttribute("adminData");
+		System.out.println(a.getName());
+	}
+	else
+	{
+		response.sendRedirect("admin-login.jsp");
+	}
+%>
+
+	<div class="main-content">
+	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		<!--left-fixed -navigation-->
+		<aside class="sidebar-left">
+      <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span> E-Society<span class="dashboard_text">Manager dashboard</span></a></h1>
           </div>
-          <div class="profile_details">
-            <ul>
-              <li class="dropdown profile_details_drop">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
-                  aria-expanded="false">
-                  <div class="profile_img">
-                    <img src="admin/assets/images/profileimg.jpg" class="rounded-circle" alt="" />
-                    <div class="user-active">
-                      <span></span>
-                    </div>
-                  </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="sidebar-menu">
+              <li class="header">Manage From Here<li>
+              <li class="treeview">
+                <a href="admin-home.jsp">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
-                <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
-                  <li class="user-info">
-                    <h5 class="user-name">John Deo</h5>
-                    <span class="status ml-2">Available</span>
-                  </li>
-                  <li> <a href="#"><i class="lnr lnr-user"></i>My Profile</a> </li>
-                  <li> <a href="#"><i class="lnr lnr-users"></i>1k Followers</a> </li>
-                  <li> <a href="#"><i class="lnr lnr-cog"></i>Setting</a> </li>
-                  <li> <a href="#"><i class="lnr lnr-heart"></i>100 Likes</a> </li>
-                  <li class="logout"> <a href="#sign-up.html"><i class="fa fa-power-off"></i> Logout</a> </li>
+              </li>
+			  <li class="treeview">
+                <a href="admin-view-all-members.jsp">
+                <i class="fa fa-pie-chart"></i>
+                <span>Society Members</span>
+                
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="admin-approve-registration-request.jsp">
+                <i class="fa fa-pie-chart"></i>
+                
+                
+                <span>Approve Registration Request</span>
+                
+                </a>
+              </li>
+              <li class="treeview">
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>UI Elements</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="general.html"><i class="fa fa-angle-right"></i> General</a></li>
+                  <li><a href="icons.html"><i class="fa fa-angle-right"></i> Icons</a></li>
+                  <li><a href="buttons.html"><i class="fa fa-angle-right"></i> Buttons</a></li>
+                  <li><a href="typography.html"><i class="fa fa-angle-right"></i> Typography</a></li>
                 </ul>
               </li>
+			  <li>
+                <a href="widgets.html">
+                <i class="fa fa-th"></i> <span>Widgets</span>
+                <small class="label pull-right label-info">08</small>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-edit"></i> <span>Forms</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="forms.html"><i class="fa fa-angle-right"></i> General Forms</a></li>
+                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> Form Validations</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-table"></i> <span>Tables</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="tables.html"><i class="fa fa-angle-right"></i> Simple tables</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-envelope"></i> <span>Mailbox </span>
+                <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1">08</small><span class="label label-primary1 pull-right">02</span></a>
+                <ul class="treeview-menu">
+                  <li><a href="inbox.html"><i class="fa fa-angle-right"></i> Mail Inbox </a></li>
+                  <li><a href="compose.html"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-folder"></i> <span>Examples</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="login.html"><i class="fa fa-angle-right"></i> Login</a></li>
+                  <li><a href="signup.html"><i class="fa fa-angle-right"></i> Register</a></li>
+                  <li><a href="404.html"><i class="fa fa-angle-right"></i> 404 Error</a></li>
+                  <li><a href="500.html"><i class="fa fa-angle-right"></i> 500 Error</a></li>
+                  <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li>
+                </ul>
+              </li>
+              <li class="header">LABELS</li>
+              <li><a href="#"><i class="fa fa-angle-right text-red"></i> <span>Important</span></a></li>
+              <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Warning</span></a></li>
+              <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>Information</span></a></li>
             </ul>
           </div>
-        </div>
-      </div>
-    </div>
-    <!--notification menu end -->
-  </div>
-  <!-- //header-ends -->
-    
-
-
-<script>
-  // When the user scrolls down 20px from the top of the document, show the button
-  window.onscroll = function () {
-    scrollFunction()
-  };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      document.getElementById("movetop").style.display = "block";
-    } else {
-      document.getElementById("movetop").style.display = "none";
-    }
-  }
-
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
-</script>
-<!-- /move top -->
-
-
-<script src="admin/assets/js/jquery-3.3.1.min.js"></script>
-<script src="admin/assets/js/jquery-1.10.2.min.js"></script>
-
-<!-- chart js -->
-<script src="admin/assets/js/Chart.min.js"></script>
-<script src="admin/assets/js/utils.js"></script>
-<!-- //chart js -->
-
-<!-- Different scripts of charts.  Ex.Barchart, Linechart -->
-<script src="admin/assets/js/bar.js"></script>
-<script src="admin/assets/js/linechart.js"></script>
-<!-- //Different scripts of charts.  Ex.Barchart, Linechart -->
-
-
-<script src="admin/assets/js/jquery.nicescroll.js"></script>
-<script src="admin/assets/js/scripts.js"></script>
-
-<!-- close script -->
-<script>
-  var closebtns = document.getElementsByClassName("close-grid");
-  var i;
-
-  for (i = 0; i < closebtns.length; i++) {
-    closebtns[i].addEventListener("click", function () {
-      this.parentElement.style.display = 'none';
-    });
-  }
-</script>
-<!-- //close script -->
-
-<!-- disable body scroll when navbar is in active -->
-<script>
-  $(function () {
-    $('.sidebar-menu-collapsed').click(function () {
-      $('body').toggleClass('noscroll');
-    })
-  });
-</script>
-<!-- disable body scroll when navbar is in active -->
-
- <!-- loading-gif Js -->
- <script src="admin/assets/js/modernizr.js"></script>
- <script>
-     $(window).load(function () {
-         // Animate loader off screen
-         $(".se-pre-con").fadeOut("slow");;
-     });
- </script>
- <!--// loading-gif Js -->
-
-<!-- Bootstrap Core JavaScript -->
-<script src="admin/assets/js/bootstrap.min.js"></script>
-   </body>
-</html>
-    
+          <!-- /.navbar-collapse -->
+      </nav>
+    </aside>
+	</div>
+		<!--left-fixed -navigation-->
+		
+		<!-- header-starts -->
+		<div class="sticky-header header-section ">
+			<div class="header-left">
+				<!--toggle button start-->
+				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
+				<!--toggle button end-->
+				<div class="profile_details_left"><!--notifications of menu start -->
+					<ul class="nofitications-dropdown">
+						<li class="dropdown head-dpdn">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<div class="notification_header">
+										<h3>You have 3 new messages</h3>
+									</div>
+								</li>
+								<li><a href="#">
+								   <div class="user_img"><img src="images/1.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet</p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								   <div class="clearfix"></div>	
+								</a></li>
+								<li class="odd"><a href="#">
+									<div class="user_img"><img src="images/4.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet </p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								  <div class="clearfix"></div>	
+								</a></li>
+								<li><a href="#">
+								   <div class="user_img"><img src="images/3.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet </p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								   <div class="clearfix"></div>	
+								</a></li>
+								<li><a href="#">
+								   <div class="user_img"><img src="images/2.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet </p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								   <div class="clearfix"></div>	
+								</a></li>
+								<li>
+									<div class="notification_bottom">
+										<a href="#">See all messages</a>
+									</div> 
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown head-dpdn">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">4</span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<div class="notification_header">
+										<h3>You have 3 new notification</h3>
+									</div>
+								</li>
+								<li><a href="#">
+									<div class="user_img"><img src="images/4.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet</p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								  <div class="clearfix"></div>	
+								 </a></li>
+								 <li class="odd"><a href="#">
+									<div class="user_img"><img src="images/1.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet </p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								   <div class="clearfix"></div>	
+								 </a></li>
+								 <li><a href="#">
+									<div class="user_img"><img src="images/3.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet </p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								   <div class="clearfix"></div>	
+								 </a></li>
+								<li><a href="#">
+								   <div class="user_img"><img src="images/2.jpg" alt=""></div>
+								   <div class="notification_desc">
+									<p>Lorem ipsum dolor amet </p>
+									<p><span>1 hour ago</span></p>
+									</div>
+								   <div class="clearfix"></div>	
+								</a></li>
+								 <li>
+									<div class="notification_bottom">
+										<a href="#">See all notifications</a>
+									</div> 
+								</li>
+							</ul>
+						</li>	
+						<li class="dropdown head-dpdn">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">8</span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<div class="notification_header">
+										<h3>You have 8 pending task</h3>
+									</div>
+								</li>
+								<li><a href="#">
+									<div class="task-info">
+										<span class="task-desc">Database update</span><span class="percentage">40%</span>
+										<div class="clearfix"></div>	
+									</div>
+									<div class="progress progress-striped active">
+										<div class="bar yellow" style="width:40%;"></div>
+									</div>
+								</a></li>
+								<li><a href="#">
+									<div class="task-info">
+										<span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
+									   <div class="clearfix"></div>	
+									</div>
+									<div class="progress progress-striped active">
+										 <div class="bar green" style="width:90%;"></div>
+									</div>
+								</a></li>
+								<li><a href="#">
+									<div class="task-info">
+										<span class="task-desc">Mobile App</span><span class="percentage">33%</span>
+										<div class="clearfix"></div>	
+									</div>
+								   <div class="progress progress-striped active">
+										 <div class="bar red" style="width: 33%;"></div>
+									</div>
+								</a></li>
+								<li><a href="#">
+									<div class="task-info">
+										<span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
+									   <div class="clearfix"></div>	
+									</div>
+									<div class="progress progress-striped active">
+										 <div class="bar  blue" style="width: 80%;"></div>
+									</div>
+								</a></li>
+								<li>
+									<div class="notification_bottom">
+										<a href="#">See all pending tasks</a>
+									</div> 
+								</li>
+							</ul>
+						</li>	
+					</ul>
+					<div class="clearfix"> </div>
+				</div>
+				<!--notification menu end -->
+				<div class="clearfix"> </div>
+			</div>
+			<div class="header-right">
+				
+				
+				<!--search-box-->
+				<div class="search-box">
+					<form class="input">
+						<input class="sb-search-input input__field--madoka" placeholder="Search..." type="search" id="input-31" />
+						<label class="input__label" for="input-31">
+							<svg class="graphic" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+								<path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+							</svg>
+						</label>
+					</form>
+				</div><!--//end-search-box-->
+				
+				<div class="profile_details">		
+					<ul>
+						<li class="dropdown profile_details_drop">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<div class="profile_img">	
+									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
+									<div class="user-name">
+										<p><%=a.getName() %></p>
+										<span><%=a.getEmail() %></span>
+									</div>
+									<i class="fa fa-angle-down lnr"></i>
+									<i class="fa fa-angle-up lnr"></i>
+									<div class="clearfix"></div>	
+								</div>	
+							</a>
+							<ul class="dropdown-menu drp-mnu">
+								<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
+								<li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li> 
+								<li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li> 
+								<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>				
+			</div>
+			<div class="clearfix"> </div>	
+		</div>
+		<!-- //header-ends -->
