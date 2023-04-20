@@ -7,17 +7,8 @@
 <title>E-Society-User Member Profile</title>
 </head>
 <body>
-<%@include file="header.jsp" %>
-<%
-	if(session.getAttribute("memberData") != null)
-	{
-		m = (Member)session.getAttribute("memberData");
-	}
-	else
-	{
-		response.sendRedirect("member-login.jsp");
-	}
-%>
+<%@include file="member-header.jsp" %>
+
 <!-- about breadcrumb -->
   <section class="w3l-about-breadcrumb text-left">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
@@ -40,7 +31,7 @@
             <form action="MemberController" method="post">
             
                 <div class="main-input">
-               
+               <input style="margin-left:-350px;" type="hidden" name="mid" id="w3lName" value="<%=m.getId() %>" class="contact-input" >
                     <div class="d-grid" style="margin-bottm:0px";>
                     	<label style="margin-top:10px;">First Name </label>
                         <input style="margin-left:-350px;" type="text" name="fname" id="w3lName" value="<%=m.getFname() %>" class="contact-input" >
@@ -53,22 +44,24 @@
                     	<label style="margin-top:10px;">Contact No</label>
                     	<input  style="margin-left:-350px;" type="text" name="contact" id="w3lPhone" value="<%=m.getContact() %>" class="contact-input"  />
                     </div>
-                    <div class="d-grid">
-                    	<label style="margin-top:10px;">Email Address</label>
-                        <input  style="margin-left:-350px;" type="email" name="email" id="w3lSender" value="<%=m.getEmail() %>" class="contact-input"  />
-                    </div>
+                    
                      <div class="d-grid">
                      	<label style="margin-top:10px;">House No</label>
                     	<input style="margin-left:-350px;" type="number" name="h_no" id="w3lPhone" value="<%=m.getH_no() %>" class="contact-input"  />
                      </div>
                      <div class="d-grid">
-                     	<label style="margin-top:10px;">Join Date</label>
-                        <input style="margin-left:-350px;" type="date" name="join_date" id="w3lSender" value="<%=m.getJoin_date() %>" class="contact-input"  />
-                    </div>
-                    <div class="d-grid">
 	                    <label style="margin-top:10px;">Address</label>
                     	<input style="margin-left:-350px;" type="text" name="address" id="w3lSender" value="<%=m.getAddress() %>" class="contact-input"  />
                    	</div>
+                     <div class="d-grid">
+                     	<label style="margin-top:10px;">Join Date</label>
+                        <input style="margin-left:-350px;" type="date" name="join_date" id="w3lSender" value="<%=m.getJoin_date() %>" class="contact-input"  />
+                    </div>
+                    
+                   	<div class="d-grid">
+                    	<label style="margin-top:10px;">Email Address</label>
+                        <input  style="margin-left:-350px;" type="email" name="email" id="w3lSender" value="<%=m.getEmail() %>" class="contact-input"  />
+                    </div>
                 </div>
               
                 <div class="text-left">

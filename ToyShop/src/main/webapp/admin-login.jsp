@@ -156,8 +156,12 @@
       <section class="contact py-lg-4 py-md-3 py-sm-3 py-3">
          <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
             <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Admin Login</h3>
+            <%String msg = (String)request.getAttribute("msg"); %>
+            <%if(msg!=null){ %>
+            	<h3><%=msg %></h3>
+            <%} %>
             <div class="contact-list-grid">
-               <form action="#" method="post">
+               <form action="AdminController" method="post">
                   <div class=" agile-wls-contact-mid">
                      <div class="form-group contact-forms">
                         <input type="email" class="form-control" name="email" placeholder="Email">
@@ -165,7 +169,7 @@
                      <div class="form-group contact-forms">
                         <input type="password" class="form-control" name="password" placeholder="Password">
                      </div>
-                     <button type="submit" name="action" value="register" class="btn btn-block sent-butnn">Register</button>
+                     <button type="submit" name="action" value="login" class="btn btn-block sent-butnn">Login</button>
                   </div>
                </form>
             </div>

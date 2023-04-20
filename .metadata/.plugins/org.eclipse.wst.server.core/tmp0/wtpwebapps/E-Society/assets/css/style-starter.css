@@ -14973,7 +14973,7 @@ a.view:hover {
 }
 
 .w3l-main-slider .banner-view {
-  background: url(../images/banner1.jpg) no-repeat center;
+  background: url(../images/home.jpg) no-repeat center; 
   background-size: cover;
   min-height: calc(100vh - 40px);
   position: relative;

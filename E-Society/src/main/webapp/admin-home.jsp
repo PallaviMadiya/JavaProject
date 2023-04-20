@@ -25,10 +25,11 @@ Author URL: http://w3layouts.com
         	</div>
         	<div class="col-md-3 widget widget1">
         		<div class="r3_counter_box">
-                    <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
+                    <i class="pull-left fa fa-users dollar2 icon-rounded"></i>
                     <div class="stats">
-                      <h5><strong>$1019</strong></h5>
-                      <span>Online Revenue</span>
+					
+					  <h5><strong></strong></h5>
+                      <span>Payment</span>
                     </div>
                 </div>
         	</div>
@@ -141,34 +142,7 @@ Author URL: http://w3layouts.com
 			<div class="clearfix"> </div>
 		</div>
 				
-				<div class="charts">
-					<div class="col-md-4 charts-grids widget">
-						<div class="card-header">
-							<h3>Bar chart</h3>
-						</div>
-						
-						<div id="container" style="width: 100%; height:270px;">
-							<canvas id="canvas"></canvas>
-						</div>
-						<button id="randomizeData">Randomize Data</button>
-						<button id="addDataset">Add Dataset</button>
-						<button id="removeDataset">Remove Dataset</button>
-						<button id="addData">Add Data</button>
-						<button id="removeData">Remove Data</button>
-						
-					</div>
-					
-					<div class="col-md-4 charts-grids widget states-mdl">
-						<div class="card-header">
-							<h3>Column & Line Graph</h3>
-						</div>
-						<div id="chartdiv"></div>
-					</div>
-			
-					<div class="clearfix"> </div>
-				</div>
 				
-	
 	<!-- for amcharts js -->
 			<script src="js/amcharts.js"></script>
 			<script src="js/serial.js"></script>
@@ -213,73 +187,7 @@ Author URL: http://w3layouts.com
 			</div>
 		</div>
 		
-		<div class="col_1">
-			<div class="col-md-4 span_8">
-				<div class="activity_box">
-					<h2>Inbox</h2>
-					<div class="scrollbar" id="style-1">
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Michael Chris</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:05 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Alexander</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:06 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Daniel Lucas</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>01:30 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/2.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">Jackson Jacob</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>01:50 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">David Samuel</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:20 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-						
-						<div class="activity-row">
-							<div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt=""/></div>
-							<div class="col-xs-7 activity-desc">
-								<h5><a href="#">laura Smith</a></h5>
-								<p>Hey ! There I'm available.</p>
-							</div>
-							<div class="col-xs-2 activity-desc1"><h6>12:50 PM</h6></div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<form action="#" method="post">
-						<input type="text" value="Enter your text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
-						<input type="submit" value="Submit"/>		
-					</form>
-				</div>
-			</div>
+		
 			<div class="col-md-4 span_8">
 				<div class="activity_box activity_box1">
 					<h3>chat</h3>

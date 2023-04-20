@@ -8,18 +8,8 @@
 <title>E-Society-User Home</title>
 </head>
 <body>
-<%@include file="header.jsp" %>
+<%@include file="member-header.jsp" %>
 
-<%
-	if(session.getAttribute("memberData") != null)
-	{
-		m = (Member)session.getAttribute("memberData");
-	}
-	else
-	{
-		response.sendRedirect("member-login.jsp");
-	}
-%>
     <!-- main-slider -->
   <section class="w3l-main-slider" id="home">
     <div class="companies20-content">

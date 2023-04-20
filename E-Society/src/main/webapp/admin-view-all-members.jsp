@@ -13,7 +13,9 @@
 					<%System.out.println("List Of Approve Member");%>
 					
 					<div class="bs-example widget-shadow" data-example-id="contextual-table"> 
-						<h4>Society Members Data:</h4>
+						<h4>Society Members Data:  
+						<a style="margin-left:900px;" href="admin-add-new-member.jsp">
+                		<i class="fa fa-user-plus"></i></h4>
 						<table class="table"> 
 						<thead> 
 						<tr> 
@@ -50,44 +52,4 @@
 				</div>
 			</div>
 		</div>
-		
-		
-	
-	<!-- side nav js -->
-	<script src='admin/assets/js/SidebarNav.min.js' type='text/javascript'></script>
-	<script>
-      $('.sidebar-menu').SidebarNav()
-    </script>
-	<!-- //side nav js -->
-	
-	<!-- Classie --><!-- for toggle left push menu script -->
-		<script src="admin/assets/js/classie.js"></script>
-		<script>
-			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-				showLeftPush = document.getElementById( 'showLeftPush' ),
-				body = document.body;
-				
-			showLeftPush.onclick = function() {
-				classie.toggle( this, 'active' );
-				classie.toggle( body, 'cbp-spmenu-push-toright' );
-				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-				disableOther( 'showLeftPush' );
-			};
-			
-			function disableOther( button ) {
-				if( button !== 'showLeftPush' ) {
-					classie.toggle( showLeftPush, 'disabled' );
-				}
-			}
-		</script>
-	<!-- //Classie --><!-- //for toggle left push menu script -->
-	
-	<!--scrolling js-->
-	<script src="admin/assets/js/jquery.nicescroll.js"></script>
-	<script src="admin/assets/js/scripts.js"></script>
-	<!--//scrolling js-->
-	
-	<!-- Bootstrap Core JavaScript -->
-	<script src="admin/assets/js/bootstrap.js"> </script>
-
 <%@include file="admin-footer.jsp" %>
