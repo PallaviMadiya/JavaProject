@@ -1,7 +1,8 @@
+<%@page import="model.Member"%>
+<%@page import="dao.AdminDao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="Model.Seller"%>
-<%@page import="Dao.AdminDao"%>    
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +10,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-int id = Integer.parseInt(request.getParameter("id"));
-AdminDao.deleteSeller(id);
-response.sendRedirect("admin-seller-list.jsp");
-%>
 
+<%
+	int cid = Integer.parseInt(request.getParameter("cid"));
+    AdminDao.adminSolvedComplaint(cid);
+    response.sendRedirect("admin-manage-complaint.jsp");
+    
+%>
 </body>
 </html>

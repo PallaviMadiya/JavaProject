@@ -11,12 +11,13 @@
 <div id="page-wrapper">
 			<div class="main-page compose">
 				<h2 class="title1">Compose Notice</h2>
+				
 				<div class="col-md-4 compose-left">
 					<div class="folder widget-shadow">
 						<ul>
 							<li class="head">Select</li>
 							<li><a href="#"><i class="fa fa-users"></i>All Members <span>52</span></a></li>
-							<li><a href="#"><i class="fa fa fa-user"></i>Select Member </a></li>
+							<li><a href="admin-view-all-notice.jsp"><i class="fa fa fa-user"></i>All Notices</a></li>
 						</ul>
 					</div>
 				</div>

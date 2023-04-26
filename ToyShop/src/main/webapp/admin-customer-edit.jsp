@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="Model.Seller"%>
-<%@page import="Dao.SellerDao"%>
+<%@page import="Model.Customer"%>
 <%@page import="Dao.AdminDao"%>
 
     
@@ -33,41 +32,41 @@
                         <div class="panel-body">
                             <div class=" form">
                             <%int id = Integer.parseInt(request.getParameter("id")); %>
-                            <%Seller s = AdminDao.getSellerById(id); %>
-                                <form class="cmxform form-horizontal " id="commentForm" method="post" action="SellerController" novalidate="novalidate">
+                            <%Customer c = AdminDao.getCustomerById(id); %>
+                                <form class="cmxform form-horizontal " id="commentForm" method="post" action="CustomerController" novalidate="novalidate">
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-3">Id</label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" id="cname" name="id"  type="text" value="<%=s.getId()%>">
+                                            <input class=" form-control" id="cname" name="cid"  type="text" value="<%=c.getCid()%>">
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-3">Name</label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" id="cname" name="name" type="text" value="<%=s.getName()%>">
+                                            <input class=" form-control" id="cname" name="name" type="text" value="<%=c.getName()%>">
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cemail" class="control-label col-lg-3">Contact</label>
                                         <div class="col-lg-6">
-                                            <input class="form-control " id="cemail" type="text" name="contact" value="<%=s.getContact()%>">
+                                            <input class="form-control " id="cemail" type="text" name="contact" value="<%=c.getContact()%>">
                                         </div>
                                     </div>
                                      <div class="form-group ">
                                         <label for="cemail" class="control-label col-lg-3">Address</label>
                                         <div class="col-lg-6">
-                                            <input class="form-control " id="cemail" type="text" name="address" value="<%=s.getAddress()%>">
+                                            <input class="form-control " id="cemail" type="text" name="address" value="<%=c.getAddress()%>">
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-3">Email</label>
                                         <div class="col-lg-6">
-                                            <input class="form-control " id="curl" type="email" name="email" value="<%=s.getEmail()%>">
+                                            <input class="form-control " id="curl" type="email" name="email" value="<%=c.getEmail()%>">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-offset-3 col-lg-6">
-                                            <button class="btn btn-primary" type="submit" name="action" value="aupdate">Update</button>
+                                            <button class="btn btn-primary" type="submit" name="action" value="update">Update</button>
                                         </div>
                                     </div>
                                 </form>

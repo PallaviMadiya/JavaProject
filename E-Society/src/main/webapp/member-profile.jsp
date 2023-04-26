@@ -31,7 +31,7 @@
             <form action="MemberController" method="post">
             
                 <div class="main-input">
-               <input style="margin-left:-350px;" type="hidden" name="mid" id="w3lName" value="<%=m.getId() %>" class="contact-input" >
+               <input style="margin-left:-350px;" type="hidden" name="mid" id="w3lName" value="<%=m.getMid() %>" class="contact-input" >
                     <div class="d-grid" style="margin-bottm:0px";>
                     	<label style="margin-top:10px;">First Name </label>
                         <input style="margin-left:-350px;" type="text" name="fname" id="w3lName" value="<%=m.getFname() %>" class="contact-input" >

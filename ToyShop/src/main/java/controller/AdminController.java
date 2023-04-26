@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import Dao.CustomerDao;
+import Model.Customer;
+
 /**
  * Servlet implementation class AdminController
  */
@@ -50,6 +53,22 @@ public class AdminController extends HttpServlet {
 				request.getRequestDispatcher("admin-login.jsp").forward(request, response);
 			}
 		}
+		else if(action.equalsIgnoreCase("update customer")) {
+			Customer c = new Customer();
+			c.setCid(Integer.parseInt(request.getParameter("cid")));
+			c.setName(request.getParameter("name"));
+			c.setContact(Long.parseLong(request.getParameter("contact")));
+			c.setAddress(request.getParameter("address"));
+			c.setEmail(request.getParameter("email"));
+			c.setPassword(request.getParameter("password"));
+			System.out.println(c);
+			CustomerDao.updateProfile(c);
+			HttpSession session = request.getSession();
+			session.setAttribute("custData", c);
+			response.sendRedirect("admin-customer-list.jsp");
+			
+		}
 	}
+	
 
 }

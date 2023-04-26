@@ -144,19 +144,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>
-              <!-- <li class="treeview">
-                <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Members</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="admin-view-all-members.jsp"><i class="fa fa-angle-right"></i> Society Members</a></li>
-                  <li><a href="admin-approve-registration-request.jsp"><i class="fa fa-angle-right"></i> Approve Registration Request</a></li>
-                  <li><a href="buttons.html"><i class="fa fa-angle-right"></i> Buttons</a></li>
-                  <li><a href="typography.html"><i class="fa fa-angle-right"></i> Typography</a></li>
-                </ul>
-              </li>-->
 			  <li class="treeview">
                 <a href="admin-view-all-members.jsp">
                 <i class="fa fa-users"></i>
@@ -167,26 +154,38 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
               <li class="treeview">
                 <a href="admin-approve-registration-request.jsp">
                 <i class="fa fa-check-square-o"></i>
-                <span>Approve Registration Request</span>
+                <span>Approve Request</span>
                 </a>
               </li>
-              
               <li class="treeview">
-                <a href="admin-add-notice.jsp">
-                <i class="fa fa-check-square-o"></i>
-                <span>Notice/Circular</span>
+                <a href="admin-manage-complaint.jsp">
+                <i class="fa fa-pie-chart"></i>
+                <span>Member Complaint</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="admin-view-all-notice.jsp">
+                <i class="fa fa-file-text-o"></i>
+                <span>Society Notice</span>
+                </a>
+              </li>
+
+               <li class="treeview">
+                <a href="admin-view-all-notice.jsp">
+                <i class="fa fa-calendar-o"></i>
+                <span>Society Meeting</span>
                 </a>
               </li>
                <li class="treeview">
-                <a href="admin-view-all-notice.jsp">
-                <i class="fa fa-check-square-o"></i>
-                <span>All Notice/Circular</span>
+                <a href="admin-view-hall-booking.jsp">
+                <i class="fa fa-calendar-o"></i>
+                <span>Hall Booking</span>
                 </a>
               </li>
-              
+              <li class="treeview">
               <li class="treeview">
                 <a href="#">
-                <i class="fa fa-laptop"></i>
+                <i class="fa fa-money"></i>
 				<span>Payment</span>
                 </a>
               </li>
@@ -396,7 +395,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 								<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
 								<li> <a href="#"><i class="fa fa-user"></i> My Account</a> </li> 
 								<li> <a href="#"><i class="fa fa-suitcase"></i> Profile</a> </li> 
-								<li> <a href="admin-logout.jsp"><i class="fa fa-sign-out"></i> Logout</a> </li>
+								<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>
 					</ul>
@@ -407,41 +406,3 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //header-ends -->
 	</div>
-		
-	
-	<!-- side nav js -->
-	<script src='admin/assets/js/SidebarNav.min.js' type='text/javascript'></script>
-	<script>
-      $('.sidebar-menu').SidebarNav()
-    </script>
-	<!-- //side nav js -->
-	
-	<!-- Classie --><!-- for toggle left push menu script -->
-		<script src="admin/assets/js/classie.js"></script>
-		<script>
-			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-				showLeftPush = document.getElementById( 'showLeftPush' ),
-				body = document.body;
-				
-			showLeftPush.onclick = function() {
-				classie.toggle( this, 'active' );
-				classie.toggle( body, 'cbp-spmenu-push-toright' );
-				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-				disableOther( 'showLeftPush' );
-			};
-			
-			function disableOther( button ) {
-				if( button !== 'showLeftPush' ) {
-					classie.toggle( showLeftPush, 'disabled' );
-				}
-			}
-		</script>
-	<!-- //Classie --><!-- //for toggle left push menu script -->
-	
-	<!--scrolling js-->
-	<script src="admin/assets/js/jquery.nicescroll.js"></script>
-	<script src="admin/assets/js/scripts.js"></script>
-	<!--//scrolling js-->
-	
-	<!-- Bootstrap Core JavaScript -->
-	<script src="admin/assets/js/bootstrap.js"> </script>

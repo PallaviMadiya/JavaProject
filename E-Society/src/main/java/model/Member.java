@@ -5,7 +5,7 @@ public class Member {
 	private int mid,h_no;
 	private String fname,lname,address,join_date,email,password,register_status;
 	private long contact;
-	public int getId() {
+	public int getMid() {
 		return mid;
 	}
 	public void setmid(int mid) {

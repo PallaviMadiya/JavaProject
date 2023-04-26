@@ -58,7 +58,7 @@
             <form action="MemberController" method="post">
                 <div class="main-input">
                		<div class="d-grid" >
-                    	<input type="hidden" name="mid" id="w3lPhone"  class="contact-input" value="<%=m.getId() %>" />
+                    	<input type="hidden" name="mid" id="w3lPhone"  class="contact-input" value="<%=m.getMid() %>" />
                     </div>
 					<div class="d-grid" >
                     	<input type="password" name="oldPassword" id="w3lPhone" placeholder="Old Password" class="contact-input" required />

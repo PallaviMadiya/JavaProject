@@ -1573,7 +1573,7 @@ button.note-color-btn {
 /*--validation--*/
 .validation-grids {
     padding: 0;
-    width: 49%;
+    width: 100%;
 }
 .validation-grids.validation-grids-right {
     margin-left: 2%;

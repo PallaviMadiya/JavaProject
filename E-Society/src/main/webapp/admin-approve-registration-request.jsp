@@ -30,7 +30,7 @@
 						<%List<Member> list = AdminDao.approveListOfMemebers(); %>
 						<%for(Member m : list){ %>
 						<tr class="active"> 
-						<th scope="row"><%=m.getId() %></th> 
+						<th scope="row"><%=m.getMid() %></th> 
 						<td><%=m.getFname() %> <%=m.getLname() %></td> 
 						<td><%=m.getContact() %></td> 
 						<td><%=m.getH_no() %></td>

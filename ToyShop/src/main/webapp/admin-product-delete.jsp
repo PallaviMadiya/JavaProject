@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@page import="Model.Seller"%>
 <%@page import="Dao.AdminDao"%>    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +11,8 @@
 <body>
 <%
 int id = Integer.parseInt(request.getParameter("id"));
-AdminDao.deleteSeller(id);
-response.sendRedirect("admin-seller-list.jsp");
+AdminDao.deleteProduct(id);
+response.sendRedirect("admin-product-list.jsp");
 %>
-
 </body>
 </html>

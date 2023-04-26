@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.AdminDao;
+import dao.MemberDao;
 import model.Admin;
+import model.Member;
 
 /**
  * Servlet implementation class AdminController
@@ -70,6 +72,28 @@ public class AdminController extends HttpServlet {
 			{
 				request.setAttribute("msg1", "Email is not registered !!");
 				request.getRequestDispatcher("admin-login.jsp").forward(request, response);
+			}
+		}
+		else if(action.equalsIgnoreCase("adminAddMember")) {
+			String email = request.getParameter("email");
+			boolean flag = AdminDao.checkMemberEmail(email);
+			if(flag==true) {
+				request.setAttribute("msg1", "Email Is Already Registered!");
+				request.getRequestDispatcher("admin-add-new-member.jsp").forward(request, response);
+			}
+			else {
+				Member m = new Member();
+				m.setFname(request.getParameter("fname"));
+				m.setLname(request.getParameter("lname"));
+				m.setContact(Long.parseLong(request.getParameter("contact")));
+				m.setH_no(Integer.parseInt(request.getParameter("h_no")));
+				m.setAddress(request.getParameter("address"));
+				m.setJoin_date(request.getParameter("join_date"));
+				m.setEmail(request.getParameter("email"));
+				m.setPassword(request.getParameter("password"));
+				m.setRegister_status("pending");
+				AdminDao.insertMember(m);
+				request.getRequestDispatcher("admin-approve-registration-request.jsp").forward(request, response);
 			}
 		}
 

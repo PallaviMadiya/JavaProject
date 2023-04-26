@@ -8,6 +8,7 @@ import java.util.List;
 
 import connection.DBConnection;
 import model.Admin;
+import model.Complaint;
 import model.Member;
 
 public class AdminDao {
@@ -168,5 +169,110 @@ public class AdminDao {
 		}
 		return list;
 	}
+	public static List<Complaint> getAllRegisteredComplaints()
+	{
+		List<Complaint> list = new ArrayList<Complaint>();
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from complaint";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				Complaint c = new Complaint();
+				c.setCid(rs.getInt("cid"));
+				c.setMid(rs.getInt("mid"));
+				c.setH_no(rs.getInt("h_no"));
+				c.setSubject(rs.getString("subject"));
+				c.setCdate(rs.getString("cdate"));
+				c.setDescription(rs.getString("description"));
+				c.setComplaint_status(rs.getString("complaint_status"));
+				list.add(c);
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public static void adminSolvedComplaint(int cid)
+	{
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "update complaint set complaint_status='solved' where cid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, cid);
+			pst.executeUpdate();
+			System.out.println("Complaint Solved");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static String checkComplaintStatus(int cid)
+	{
+		String c_status="";
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from complaint where cid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, cid);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				c_status = rs.getString("complaint_status");		
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return c_status;
+	}
+	public static boolean checkMemberEmail(String email) {
+		boolean flag = false;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from member where email=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, email);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				flag = true;
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	public static void insertMember(Member m)
+	{
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "insert into member(fname,lname,contact,h_no,address,join_date,email,password,register_status) values(?,?,?,?,?,?,?,?,?)";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, m.getFname());
+			pst.setString(2, m.getLname());
+			pst.setLong(3, m.getContact());
+			pst.setInt(4, m.getH_no());
+			pst.setString(5, m.getAddress());
+			pst.setString(6, m.getJoin_date());
+			pst.setString(7, m.getEmail());
+			pst.setString(8, m.getPassword());
+			pst.setString(9, m.getRegister_status());
+			pst.executeUpdate();
+			System.out.println("Member data inserted");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 
 }

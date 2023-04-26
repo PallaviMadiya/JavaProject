@@ -43,7 +43,7 @@
             
                 <div class="main-input">
                     <div class="d-grid">
-                    	<input type="hidden" name="mid" id="w3lName"  class="contact-input" value="<%=m.getId() %>" />
+                    	<input type="hidden" name="mid" id="w3lName"  class="contact-input" value="<%=m.getMid() %>" />
             			<input type="hidden" name="h_no" id="w3lName"  class="contact-input" value="<%=m.getH_no() %>" />
                         <input type="text" name="subject" id="w3lName" placeholder="Your Complaint Subject" class="contact-input" required />
 						<input type="date" name="cdate" id="w3lName"  class="contact-input" required />
