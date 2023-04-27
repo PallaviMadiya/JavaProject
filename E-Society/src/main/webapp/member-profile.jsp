@@ -15,7 +15,7 @@
       <div class="container">
         <h2 class="title">Member Profile</h2>
         <ul class="breadcrumbs-custom-path mt-2">
-          <li><a href="index.jsp">Home</a></li>
+          <li><a href="member-home.jsp">Home</a></li>
           <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Member Profile </li>
         </ul>
       </div>

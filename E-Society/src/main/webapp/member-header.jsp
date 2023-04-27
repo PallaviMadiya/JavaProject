@@ -19,6 +19,39 @@
     <link rel="stylesheet" href="assets/css/style-liberty.css">
   
   <link rel="stylesheet" href="assets/css/dropdown.css">
+  
+  
+ <style>
+ 
+
+ 
+#complaints {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+#complaints td, #complaints th {
+  border: 2px solid #212121;
+  text-color: black;
+  padding: 8px;
+}
+
+#complaints tr:nth-child(even){background-color: #fff3e0;}
+
+#complaints tr:hover {background-color: #ddd;}
+
+#complaints th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: left;
+  background-color: #ffab00;
+  color: black;
+}
+</style>
+  
 </head>
 <body>
 
@@ -65,8 +98,8 @@
 		             		<a class="nav-link" class="dropbtn">Complaint <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="member-register-complaint.jsp">Register Complaint</a>
-		                		<a class="nav-link" href="#">View All Complaint</a>
+		                		<a class="nav-link" href="member-register-complain.jsp">Register Complaint</a>
+		                		<a class="nav-link" href="member-view-complaint.jsp">View Your Complaints</a>
 		              		</div>
 		            	</div>
 		            </li> 
@@ -77,9 +110,10 @@
 		             		<a class="nav-link" class="dropbtn">Service <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="#">Book Hall</a>
-		                		<a class="nav-link" href="#">Society Meetings</a>
-		                		<a class="nav-link" href="member-view-notice.jsp">Notice</a>
+		                		<a class="nav-link" href="member-book-hall.jsp">Book Hall</a>
+		                		<a class="nav-link" href="member-hall-booking-list.jsp">Manage Hall Booking</a>
+		                		
+		                		<a class="nav-link" href="member-view-notice.jsp">Circular</a>
 		              		</div>
 		            	</div>
 		            </li> 

@@ -9,15 +9,18 @@
     <fullyQualifiedTypeName name="Model.Seller"/>
     <fullyQualifiedTypeName name="Model.Customer"/>
     <fullyQualifiedTypeName name="Model.Product"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
-    <fullyQualifiedTypeName name="connection.DBConnection"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="dao.ComplaintDao"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="model.ComplaintReply"/>
     <fullyQualifiedTypeName name="model.Complaint"/>
+    <fullyQualifiedTypeName name="model.HallBooking"/>
+    <fullyQualifiedTypeName name="dao.HallBookDao"/>
+    <fullyQualifiedTypeName name="connection.DBConnection"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
 </qualifiedTypeNameHistroy>
