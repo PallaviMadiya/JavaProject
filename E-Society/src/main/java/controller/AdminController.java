@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.AdminDao;
+import dao.HallBookDao;
 import dao.MemberDao;
 import model.Admin;
+import model.HallBook;
 import model.Member;
 
 /**
@@ -96,7 +98,36 @@ public class AdminController extends HttpServlet {
 				request.getRequestDispatcher("admin-approve-registration-request.jsp").forward(request, response);
 			}
 		}
+		else if(action.equalsIgnoreCase("adminBookHall")) {
+			String email = request.getParameter("email");
+			System.out.println("Before Mid If");
+			int mid = AdminDao.getMemberId(email);
+			System.out.println("Before If");
+			if(mid != 0) {
+				System.out.println("After If");
 
+				HallBook b = new HallBook();
+				b.setMid(mid);
+				b.setB_subject(request.getParameter("b_subject"));
+				b.setB_hour(Integer.parseInt(request.getParameter("b_hour")));
+				b.setB_date(request.getParameter("b_date"));
+				b.setB_time(request.getParameter("b_time"));
+				AdminDao.adminBookHall(b);
+				System.out.println("Admin Hall Booked!! Controller");
+				response.sendRedirect("admin-view-hall-booking.jsp");
+			}
+		}
+		else if(action.equalsIgnoreCase("adminEditBookHallDetail")) {
+			HallBook b = new HallBook();
+			b.setBid(Integer.parseInt(request.getParameter("bid")));
+			b.setMid(Integer.parseInt(request.getParameter("mid")));
+			b.setB_subject(request.getParameter("b_subject"));
+			b.setB_hour(Integer.parseInt(request.getParameter("b_hour")));
+			b.setB_date(request.getParameter("b_date"));
+			b.setB_time(request.getParameter("b_time"));
+			HallBookDao.updateBookHallDetail(b);
+			response.sendRedirect("admin-view-hall-booking.jsp");
+		}
 		
 	}
 

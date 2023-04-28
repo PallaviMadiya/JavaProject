@@ -12,6 +12,12 @@
 <meta charset="ISO-8859-1">
 <title>E-Society Member Hall Book List</title>
 </head>
+<style>
+	input{
+	border-style: none; 
+	background-color: white;
+	}
+</style>
 <body>
 <%@include file="member-header.jsp" %>
 

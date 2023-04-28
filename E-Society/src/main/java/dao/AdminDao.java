@@ -9,6 +9,7 @@ import java.util.List;
 import connection.DBConnection;
 import model.Admin;
 import model.Complaint;
+import model.HallBook;
 import model.Member;
 
 public class AdminDao {
@@ -270,9 +271,141 @@ public class AdminDao {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}		
+	}
+	public static List<HallBook> adminGetAllHallBooking(){
+		List<HallBook> list = new ArrayList<HallBook>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from bookhall";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				HallBook b = new HallBook();
+				b.setBid(rs.getInt("bid"));
+				b.setMid(rs.getInt("mid"));
+				b.setB_subject(rs.getString("b_subject"));
+				b.setB_hour(rs.getInt("b_hour"));
+				b.setB_date(rs.getString("b_date"));
+				b.setB_time(rs.getString("b_time"));
+				list.add(b);
+				System.out.println("Admin Book Hall List Fetched Dao");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
-		
+		return list;
+	}
+	public static List<Member> getMemberByMid(int mid)
+	{
+		List<Member> list = new ArrayList<Member>();
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from member where mid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, mid);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				Member m = new Member();
+				m.setmid(rs.getInt("mid"));
+				m.setFname(rs.getString("fname"));
+				m.setLname(rs.getString("lname"));
+				m.setContact(rs.getLong("contact"));
+				m.setH_no(rs.getInt("h_no"));
+				m.setAddress(rs.getString("address"));
+				m.setJoin_date(rs.getString("join_date"));
+				m.setEmail(rs.getString("email"));
+				m.setPassword(rs.getString("password"));
+				m.setRegister_status(rs.getString("register_status"));
+				list.add(m);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 
+	public static int getMemberId(String email) {
+		int mid = 0;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select mid from member where email=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, email);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				mid = rs.getInt("mid");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return mid;
+	}
+
+	public static void adminBookHall(HallBook b) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "insert into bookhall(mid,b_subject,b_hour,b_date,b_time) values(?,?,?,?,?)";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, b.getMid());
+			pst.setString(2, b.getB_subject());
+			pst.setInt(3, b.getB_hour());
+			pst.setString(4, b.getB_date());
+			pst.setString(5, b.getB_time());
+			pst.executeUpdate();
+			System.out.println("Admin Hall Booked!! Dao");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static HallBook adminGetBookHallDetailByBid(int bid) {
+		HallBook b = new HallBook();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from bookhall where bid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, bid);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				b.setBid(rs.getInt("bid"));
+				b.setMid(rs.getInt("mid"));
+				b.setB_subject(rs.getString("b_subject"));
+				b.setB_hour(rs.getInt("b_hour"));
+				b.setB_date(rs.getString("b_date"));
+				b.setB_time(rs.getString("b_time"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return b;
+	}
+	public static Member adminGetMemberByMid(int mid) {
+		Member m = null;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from member where mid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, mid);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+			    m = new Member();
+				m.setmid(rs.getInt("mid"));
+				m.setFname(rs.getString("fname"));
+				m.setLname(rs.getString("lname"));
+				m.setContact(rs.getLong("contact"));
+				m.setH_no(rs.getInt("h_no"));
+				m.setAddress(rs.getString("address"));
+				m.setJoin_date(rs.getString("join_date"));
+				m.setEmail(rs.getString("email"));
+				m.setPassword(rs.getString("password"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return m;
+	}
 
 }
