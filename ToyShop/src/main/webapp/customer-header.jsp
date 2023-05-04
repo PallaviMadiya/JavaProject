@@ -63,7 +63,7 @@
          <div class="container-fluid">
             <div class="hedder-up row">
                <div class="col-lg-3 col-md-3 logo-head">
-                  <h1><a class="navbar-brand" href="index.html">E-Shop</a></h1>
+                  <h1><a class="navbar-brand" href="index.html">ToyShop</a></h1>
                </div>
                
                
