@@ -28,15 +28,25 @@
       <h3 class="hny-title mb-lg-5 mb-4">Member Hall Booking</h3>
         <div class="contacts12-main mb-5">
             <form action="HallBookController" method="post">
+            <%String msg = (String)request.getAttribute("msg"); %>
+            <%
+            	if(msg != null)
+            	{
+            %>
+            <h3><%=msg %></h3>
+            <%
+            	}
+            %>
+            <br>
                 <div class="main-input">
                     	<input type="hidden" name="mid" id="w3lPhone" value="<%=m.getMid() %>" class="contact-input" >
                     <div class="d-grid">
                         <input type="text" name="b_subject" id="w3lName" placeholder="Enter Event Name" class="contact-input" required />
-						<input type="number" name="b_hour" id="w3lName" placeholder="Enter Hours For Booking" class="contact-input" required />
+						
                     </div>
                     <div class="d-grid">
                     	<input type="date" name="b_date" id="w3lPhone" placeholder="Enter Date" class="contact-input" required />
-                        <input type="time" name="b_time" id="w3lSender" placeholder="Enter Time" class="contact-input" required />
+                        
                     </div>
                     
                     

@@ -38,7 +38,7 @@ public class PaymentController extends HttpServlet {
 		System.out.println(action);
 		if(action.equalsIgnoreCase("CheckOut")) {
 			String amount=request.getParameter("amount");
-			Integer digit=new Integer(Integer.parseInt(amount)*100);
+			System.out.println("Amount COntroller: "+amount);
 			request.setAttribute("amount", amount);
 			request.getRequestDispatcher("payment.jsp").forward(request, response);
 		}

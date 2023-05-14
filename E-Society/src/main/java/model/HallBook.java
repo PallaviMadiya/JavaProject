@@ -1,8 +1,8 @@
 package model;
 
 public class HallBook {
-	private int mid, bid, b_hour;
-	private String b_subject, b_date, b_time;
+	private int mid, bid;
+	private String b_subject, b_date,bpayment_status;
 	public int getMid() {
 		return mid;
 	}
@@ -15,12 +15,7 @@ public class HallBook {
 	public void setBid(int bid) {
 		this.bid = bid;
 	}
-	public int getB_hour() {
-		return b_hour;
-	}
-	public void setB_hour(int b_hour) {
-		this.b_hour = b_hour;
-	}
+	
 	public String getB_subject() {
 		return b_subject;
 	}
@@ -33,17 +28,21 @@ public class HallBook {
 	public void setB_date(String b_date) {
 		this.b_date = b_date;
 	}
-	public String getB_time() {
-		return b_time;
+	
+	public String getBpayment_status() {
+		return bpayment_status;
 	}
-	public void setB_time(String b_time) {
-		this.b_time = b_time;
+	public void setBpayment_status(String bpayment_status) {
+		this.bpayment_status = bpayment_status;
 	}
 	@Override
 	public String toString() {
-		return "HallBooking [mid=" + mid + ", bid=" + bid + ", b_hour=" + b_hour + ", b_subject=" + b_subject
-				+ ", b_date=" + b_date + ", b_time=" + b_time + "]";
+		return "HallBook [mid=" + mid + ", bid=" + bid + ", b_subject=" + b_subject + ", b_date=" + b_date
+				+ ", bpayment_status=" + bpayment_status + "]";
 	}
+	
+	
+	
 	
 	
 }

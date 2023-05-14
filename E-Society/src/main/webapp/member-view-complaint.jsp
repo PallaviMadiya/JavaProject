@@ -21,6 +21,8 @@
 <br><br><br><br>
 <h1 align="center">View Your All Complaints</h1>
 <br><br>
+<%List<Complaint> list = ComplaintDao.getComplaintByMemberId(m.getMid()); %>
+<%if(list.isEmpty() == false) {%>
 <table id="complaints" align="center">
   <tr>
     	<th>Complaint ID</th> 
@@ -30,7 +32,7 @@
 		<th>Status</th>
 		<th>Secretary Reply</th>
   </tr>
-  <%List<Complaint> list = ComplaintDao.getComplaintByMemberId(m.getMid()); %>
+  
   <%for(Complaint c : list){ %>
   <tr>
     <td><%=c.getCid() %></td>
@@ -52,5 +54,14 @@
   <%} %>
  
 </table>
+<%
+}
+else
+{
+%>
+<h2 style="color:#ffab00"><center>You have no complaints !!</center></h2>
+<%
+}
+%>
 <br><br><br><br><br><br><br><br><br>
 <%@include file="footer.jsp"%>

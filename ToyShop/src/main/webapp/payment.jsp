@@ -20,7 +20,7 @@
 	{
 		/*  alert("1");  */
 		var number=document.getElementById("amount").value;
-		xhttp.open("POST","http://localhost:8080/ToyShop/OrderCreation?amount="+number,false);
+		xhttp.open("GET","http://localhost:8080/ToyShop/OrderCreation?amount="+number,false);
 		/* alert("2"); */
 		xhttp.send();
 		RazorpayOrderId=xhttp.responseText;
@@ -44,6 +44,7 @@
 				"name":"Villince",	
 				"description":"Test",
 				"order_id":RazorpayOrderId,
+
 				
 				"callback_url":"http://localhost:8080/ToyShop/customer-home.jsp",
 				"prefill":{
@@ -78,11 +79,17 @@
 <body>
 <%@include file="customer-header.jsp" %>
 
-<%int am = Integer.parseInt(request.getParameter("amount"));
-System.out.println("Amount"+am);
+<%
+	int am = Integer.parseInt(request.getParameter("amount"));
+	System.out.println("Amount"+am);
+	int cid = Integer.parseInt(request.getParameter("cid"));
+	System.out.println("Cid"+cid);
+
+
 %>
-<center> 
+
 	<input type="hidden" id="amount" value="<%=am%>">
+	
 	
 	<button style="border:2px black solid;border-radius:5px;height:40px; width:100px;margin-top:200px;" id="payButton" onclick="CreateOrderID()" class="bttnStyle">Pay Now</button>
 </center>

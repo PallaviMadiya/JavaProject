@@ -7,7 +7,7 @@
 <title>E-Society-User Validate OTP</title>
 </head>
 <body>
-<%@include file="member-header.jsp" %>
+<%@include file="header.jsp" %>
 	<!-- about breadcrumb -->
   <section class="w3l-about-breadcrumb text-left">
     <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">

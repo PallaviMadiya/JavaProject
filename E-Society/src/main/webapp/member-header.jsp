@@ -123,8 +123,8 @@
 		             		<a class="nav-link" class="dropbtn">Payment <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="#">Maintenance</a>
-		                		<a class="nav-link" href="#">Payment History</a>
+		                		<a class="nav-link" href="member-pay-maintenance.jsp">Maintenance</a>
+		                		<a class="nav-link" href="member-view-mpayment-history.jsp">Payment History</a>
 		              		</div>
 		            	</div>
 		            </li> 		
@@ -136,8 +136,8 @@
 		             		<a class="nav-link" class="dropbtn">Event <i class="fa fa-angle-down lnr"></i> <span class="sr-only">(current)</span></a>
 		              		<div class="dropdown-content" >
 		              				
-		                		<a class="nav-link" href="#">Society Events</a>
-		                		<a class="nav-link" href="#">Gallery</a>
+		                		<a class="nav-link" href="member-view-all-event.jsp">Society Events</a>
+		                		
 		              		</div>
 		            	</div>
 		            </li> 

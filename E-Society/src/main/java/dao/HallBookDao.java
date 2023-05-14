@@ -15,13 +15,12 @@ public class HallBookDao {
 	public static void bookHall(HallBook b) {
 		try {
 			Connection conn = DBConnection.createConnection();
-			String sql = "insert into bookhall(mid,b_subject,b_hour,b_date,b_time) values(?,?,?,?,?)";
+			String sql = "insert into bookhall(mid,b_subject,b_date,bpayment_status) values(?,?,?,?)";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, b.getMid());
 			pst.setString(2, b.getB_subject());
-			pst.setInt(3, b.getB_hour());
-			pst.setString(4, b.getB_date());
-			pst.setString(5, b.getB_time());
+			pst.setString(3, b.getB_date());
+			pst.setString(4, b.getBpayment_status());
 			pst.executeUpdate();
 			System.out.println("Hall Booked!! Dao");
 		}catch(Exception e) {
@@ -41,9 +40,8 @@ public class HallBookDao {
 				b.setBid(rs.getInt("bid"));
 				b.setMid(rs.getInt("mid"));
 				b.setB_subject(rs.getString("b_subject"));
-				b.setB_hour(rs.getInt("b_hour"));
 				b.setB_date(rs.getString("b_date"));
-				b.setB_time(rs.getString("b_time"));
+				b.setBpayment_status(rs.getString("bpayment_status"));
 				list.add(b);
 				System.out.println("Book Hall List Fetched Dao");
 			}
@@ -64,9 +62,8 @@ public class HallBookDao {
 				b.setBid(rs.getInt("bid"));
 				b.setMid(rs.getInt("mid"));
 				b.setB_subject(rs.getString("b_subject"));
-				b.setB_hour(rs.getInt("b_hour"));
 				b.setB_date(rs.getString("b_date"));
-				b.setB_time(rs.getString("b_time"));
+				b.setBpayment_status(rs.getString("bpayment_status"));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -76,14 +73,12 @@ public class HallBookDao {
 	public static void updateBookHallDetail(HallBook b) {
 		try {
 			Connection conn = DBConnection.createConnection();
-			String sql = "update bookhall set mid=?,b_subject=?,b_hour=?,b_date=?,b_time=? where bid=?";
+			String sql = "update bookhall set mid=?,b_subject=?,b_date=? where bid=?";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, b.getMid());
 			pst.setString(2, b.getB_subject());
-			pst.setInt(3, b.getB_hour());
-			pst.setString(4, b.getB_date());
-			pst.setString(5, b.getB_time());
-			pst.setInt(6, b.getBid());
+			pst.setString(3, b.getB_date());
+			pst.setInt(4, b.getBid());
 			pst.executeUpdate();
 			System.out.println("Hall book detail updated!! Dao");
 		}catch(Exception e) {
@@ -103,5 +98,85 @@ public class HallBookDao {
 		}
 	}
 
+	
+	public static boolean checkHallBookingDate(String bdate)
+	{
+		boolean flag = false;
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from bookhall where b_date=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, bdate);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next())
+			{
+				flag = true;
+			}
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	
+	public static void updateHallPaymentStatus(int bid)
+	{
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "update bookhall set bpayment_status='successful' where bid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, bid);
+			pst.executeUpdate();
+			System.out.println("Hall rent payment done");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static String checkHallPaymentStatus(int bid)
+	{
+		String status = "";
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from bookhall where bid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, bid);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				status = rs.getString("bpayment_status");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
+	public static List<HallBook> getHallBookList(){
+		List<HallBook> list = new ArrayList<HallBook>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from bookhall";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				HallBook b = new HallBook();
+				b.setBid(rs.getInt("bid"));
+				b.setMid(rs.getInt("mid"));
+				b.setB_subject(rs.getString("b_subject"));
+				b.setB_date(rs.getString("b_date"));
+				b.setBpayment_status(rs.getString("bpayment_status"));
+				list.add(b);
+				System.out.println("Book Hall List Fetched Dao");
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 	
 }

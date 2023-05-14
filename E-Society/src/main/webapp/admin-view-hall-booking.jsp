@@ -29,17 +29,13 @@
 							<div class="panel panel-info"> 
 								<div class="panel-heading"> 
 									<h2 class="panel-title" style="font-size:18px;"> 
-										<%=b.getB_subject() %> &nbsp;&nbsp; <%=b.getB_date() %>
-										<a href="admin-edit-booking-detail.jsp?bid=<%=b.getBid() %>"><i style="margin-left:780px; font-size:18px;" class="fa fa-edit"></i></a>
-										 <a href="admin-delete-hall-booking.jsp?bid=<%=b.getBid() %>"><i style="margin-left:10px; font-size:18px;" class="fa fa-trash-o"> </i></a>
+										<%=b.getB_subject() %> &nbsp;&nbsp;&nbsp;&nbsp; Date: <%=b.getB_date() %>
 									 </h2> 
 								</div> 
 								<div class="panel-body"> 
 									 Member Name: <%=m.getFname() %><br>
 									 Hall Booking Event: <%=b.getB_subject() %><br>									 
 									 Booking Date: <%=b.getB_date() %><br>
-									 Booking Time: <%=b.getB_time() %><br>
-									 Booking Hours: <%=b.getB_hour() %><br>
 								</div> 
 							</div>
 						</div>

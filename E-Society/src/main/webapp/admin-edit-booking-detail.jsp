@@ -37,14 +37,9 @@
 							<input type="text" class="form-control" id="inputName" name="b_subject" value="<%=b.getB_subject() %>" required>
 						</div>
 						<div class="form-group">
-							<input type="number" class="form-control" id="inputName" name="b_hour" value="<%=b.getB_hour() %>" required>
-						</div>
-						<div class="form-group">
 							<input type="date" class="form-control" id="inputName" name="b_date" value="<%=b.getB_date() %>" required>
 						</div>
-						<div class="form-group">
-							<input type="time" class="form-control" id="inputName" name="b_time" value="<%=b.getB_time() %>" required>
-						</div>
+						
 						
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary enabled" name="action" value="adminEditBookHallDetail">Edit Booking Detail</button>

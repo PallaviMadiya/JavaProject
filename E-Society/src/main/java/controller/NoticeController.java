@@ -40,13 +40,23 @@ public class NoticeController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
 		System.out.println("Action: "+action);
-		if(action.equalsIgnoreCase("add notice")) {
+		if(action.equalsIgnoreCase("Add notice")) {
 			Notice n = new Notice();
 			n.setN_date(request.getParameter("n_date"));
 			n.setN_subject(request.getParameter("n_subject"));
 			n.setN_message(request.getParameter("n_message"));
 			NoticeDao.addNotice(n);
-			response.sendRedirect("admin-add-notice.jsp");
+			response.sendRedirect("admin-view-all-notice.jsp");
+		}
+		else if (action.equalsIgnoreCase("Edit Notice")) {
+			Notice n = new Notice();
+			n.setNid(Integer.parseInt(request.getParameter("nid")));
+			n.setN_date(request.getParameter("n_date"));
+			n.setN_subject(request.getParameter("n_subject"));
+			n.setN_message(request.getParameter("n_message"));
+			NoticeDao.updateNotice(n);
+			response.sendRedirect("admin-view-all-notice.jsp");
+			
 		}
 	}
 

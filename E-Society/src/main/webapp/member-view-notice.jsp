@@ -30,16 +30,22 @@
    <div class="contact-form py-5" id="contact">
    		<div class="container py-lg-5 py-md-4">
    			<h3 class="hny-title mb-lg-5 mb-4">Society Notices</h3>
+   			<hr style="border-bottom: 2px solid var(--secondary-color);">
+   			
    			<%for(Notice n: list){ %>
-   			<div style="height:auto; width:1150px; ">
+   			<div style="height:auto; width:1150px; "><br>
+   			
    					<h3 style="font-size: 20px;line-height:26px;">
    						Subject:<span style="color: var(--secondary-color);font-size: 20px;"><%=n.getN_subject() %></span><br>
    						Date: <span style="color: var(--secondary-color);font-size: 20px;"><%=n.getN_date() %></span>
 					</h3>
+					
    				<p style="margin-top: 15px;color: var(--font-color);"><%=n.getN_message() %></p>
+   				<br>
+   				<hr style="border-bottom: 2px solid var(--secondary-color);">
    			</div>
    			<%} %>
-   			<hr style="border-bottom: 2px solid var(--secondary-color);">
+   			
     	</div>
     </div>
   <!--//grids-->

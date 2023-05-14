@@ -72,7 +72,7 @@
                     placeholder="Type your message here" required></textarea> -->
                 <div class="text-left" >
                     <button class="btn btn-style btn-primary btn-contact" type="submit" name="action" value="memberSignIn">Member Sign In</button>
-     	            <sapn style="margin-left:250px;"><a href="member-forget-password.jsp" >Forget Password?</a></sapn>
+     	            <span style="margin-left:250px;"><a href="member-forget-password.jsp" >Forget Password?</a></span>
                 </div>
                 
             </form>

@@ -9,19 +9,23 @@
 <div id="page-wrapper">
 	<div class="main-page">
 		<div class="tables">
-			<h2 class="title1">All Society Members Complaints</h2>
+			<h2 class="title1">Manage Society Members Complaints</h2>
 			
-			<button type = "button" class = "btn btn-primary">All Complaints</button>
+			<form action="ComplaintController" method="post">
+			
+			<button type = "submit" class = "btn btn-danger" name="action" value="adminManageComplaint">Manage Complaints</button>
+			
+			<button type = "submit" class = "btn btn-primary" name="action" value="adminViewAllComplaints">All Complaints</button>
 		
 			<!-- Indicates a successful or positive action -->
-			<button type = "button" class = "btn btn-success">Solved Complaints</button>
+			<button type = "submit" class = "btn btn-success" name="action" value="adminViewSolvedComplaints">Solved Complaints</button>
 				
 			<!-- Indicates caution should be taken with this action -->
-			<button type = "button" class = "btn btn-warning">Pending Complaints</button>
+			<button type = "submit" class = "btn btn-warning" name="action" value="adminViewPendingComplaints">Unsolved Complaints</button>
 		
 			<!-- Indicates a dangerous or potentially negative action -->
-			<button type = "button" class = "btn btn-danger">Unsolved Complaints</button>
-							
+			<!-- <button type = "button" class = "btn btn-danger" >Unsolved Complaints</button> -->
+			</form>				
 					
 				<div class="bs-example widget-shadow" data-example-id="contextual-table"> 
 					<h4>Manage Complaints:</h4>

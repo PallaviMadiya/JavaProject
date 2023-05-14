@@ -35,6 +35,9 @@ public class OrderCreation extends HttpServlet {
 			
 			String amount=request.getParameter("amount");
 			Integer digit=new Integer(Integer.parseInt(amount)*100);
+			System.out.println("Amount OrderCreation "+digit);
+			String cid = request.getParameter("cid");
+			System.out.println("CustomerID controller: "+cid);
 			
 			JSONObject options=new JSONObject();
 			options.put("amount", digit.toString());
@@ -66,6 +69,7 @@ public class OrderCreation extends HttpServlet {
 			if(SigRes)
 			{
 				response.getWriter().append("Payment Successfull");
+				
 			}
 			else
 			{

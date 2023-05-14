@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.AdminDao;
 import dao.HallBookDao;
-import dao.MemberDao;
+
 import model.Admin;
 import model.HallBook;
 import model.Member;
@@ -93,7 +93,7 @@ public class AdminController extends HttpServlet {
 				m.setJoin_date(request.getParameter("join_date"));
 				m.setEmail(request.getParameter("email"));
 				m.setPassword(request.getParameter("password"));
-				m.setRegister_status("pending");
+				m.setRegister_status("approved");
 				AdminDao.insertMember(m);
 				request.getRequestDispatcher("admin-approve-registration-request.jsp").forward(request, response);
 			}
@@ -109,12 +109,23 @@ public class AdminController extends HttpServlet {
 				HallBook b = new HallBook();
 				b.setMid(mid);
 				b.setB_subject(request.getParameter("b_subject"));
-				b.setB_hour(Integer.parseInt(request.getParameter("b_hour")));
 				b.setB_date(request.getParameter("b_date"));
-				b.setB_time(request.getParameter("b_time"));
-				AdminDao.adminBookHall(b);
-				System.out.println("Admin Hall Booked!! Controller");
-				response.sendRedirect("admin-view-hall-booking.jsp");
+				
+				String bdate = request.getParameter("b_date");
+				boolean flag = HallBookDao.checkHallBookingDate(bdate);
+				
+				if(flag == true)
+				{
+					request.setAttribute("msg", "Sorry...This date has been already booked !!");
+					request.getRequestDispatcher("admin-hall-booking.jsp").forward(request, response);
+				}
+				else
+				{
+					AdminDao.adminBookHall(b);
+					System.out.println("Admin Hall Booked!! Controller");
+					response.sendRedirect("admin-view-hall-booking.jsp");
+				}
+				
 			}
 		}
 		else if(action.equalsIgnoreCase("adminEditBookHallDetail")) {
@@ -122,9 +133,7 @@ public class AdminController extends HttpServlet {
 			b.setBid(Integer.parseInt(request.getParameter("bid")));
 			b.setMid(Integer.parseInt(request.getParameter("mid")));
 			b.setB_subject(request.getParameter("b_subject"));
-			b.setB_hour(Integer.parseInt(request.getParameter("b_hour")));
 			b.setB_date(request.getParameter("b_date"));
-			b.setB_time(request.getParameter("b_time"));
 			HallBookDao.updateBookHallDetail(b);
 			response.sendRedirect("admin-view-hall-booking.jsp");
 		}

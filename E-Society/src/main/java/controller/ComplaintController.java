@@ -57,7 +57,7 @@ public class ComplaintController extends HttpServlet {
 			c.setComplaint_status("applied");
 			ComplaintDao.registerComplaint(c);
 			request.setAttribute("msg", "Your complaint has been registered !!");
-			request.getRequestDispatcher("member-register-complait.jsp").forward(request, response);
+			request.getRequestDispatcher("member-register-complaint.jsp").forward(request, response);
 		}
 		else if(action.equalsIgnoreCase("adminReply"))
 		{
@@ -72,6 +72,22 @@ public class ComplaintController extends HttpServlet {
 			ComplaintDao.adminReplyComplaint(cr);
 			request.setAttribute("reply", "Your Reply has been Sent !!");
 			request.getRequestDispatcher("admin-reply-complaint.jsp").forward(request, response);
+		}
+		else if(action.equalsIgnoreCase("adminManageComplaint"))
+		{
+			response.sendRedirect("admin-manage-complaint.jsp");
+		}
+		else if(action.equalsIgnoreCase("adminViewAllComplaints"))
+		{
+			response.sendRedirect("admin-view-all-complaint.jsp");
+		}
+		else if(action.equalsIgnoreCase("adminViewSolvedComplaints"))
+		{
+			response.sendRedirect("admin-view-solved-complaint.jsp");
+		}
+		else if(action.equalsIgnoreCase("adminViewPendingComplaints"))
+		{
+			response.sendRedirect("admin-view-unsolved-complaint.jsp");
 		}
 	}
 }

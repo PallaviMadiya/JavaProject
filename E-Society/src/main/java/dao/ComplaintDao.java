@@ -104,4 +104,63 @@ public class ComplaintDao {
 		}
 		return list;
 	}
+	
+	public static List<Complaint> getAllSolvedComplaints()
+	{
+		List<Complaint> list = new ArrayList<Complaint>();
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from complaint where complaint_status='solved'";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				Complaint c = new Complaint();
+				c.setCid(rs.getInt("cid"));
+				c.setMid(rs.getInt("mid"));
+				c.setH_no(rs.getInt("h_no"));
+				c.setSubject(rs.getString("subject"));
+				c.setCdate(rs.getString("cdate"));
+				c.setDescription(rs.getString("description"));
+				c.setComplaint_status(rs.getString("complaint_status"));
+				list.add(c);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public static List<Complaint> getAllPendingComplaints()
+	{
+		List<Complaint> list = new ArrayList<Complaint>();
+		try {
+			
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from complaint where complaint_status='applied'";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next())
+			{
+				Complaint c = new Complaint();
+				c.setCid(rs.getInt("cid"));
+				c.setMid(rs.getInt("mid"));
+				c.setH_no(rs.getInt("h_no"));
+				c.setSubject(rs.getString("subject"));
+				c.setCdate(rs.getString("cdate"));
+				c.setDescription(rs.getString("description"));
+				c.setComplaint_status(rs.getString("complaint_status"));
+				list.add(c);
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
+	
 }

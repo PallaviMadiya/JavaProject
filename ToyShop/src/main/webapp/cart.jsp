@@ -76,28 +76,32 @@
 							<%for(Cart c1:list){ %>
 							<ul>
 								<li><%=c1.getPname() %> <i>-</i> <span><%=c1.getTotal() %> </span></li>
+								
 							</ul>
 							<%} %>
 							<h5>Total : <%out.print(net_price); %></h5>
 						</div>
 						<div class="col-md-8 address_form">
-					<form method="post" action="PaymentController">
-		<table style="border:none;">
-			<tbody>
-				<tr>
-					<td>
-						<label>Total Amount</label>
-					</td>
-					<td>
-						<input title="TXN_AMOUNT" tabindex="10"	type="text" name="amount" value="<%=net_price%>">
-					</td>
-				</tr>
-				<tr>
-					<td><input style="border:2px black solid;border-radius:5px; background:light-gray;height:40px; width:100px;margin-left:20px;" name="action" value="CheckOut" type="submit" onclick=""></td>
-				</tr>
-			</tbody>
-		</table>
-	</form>
+							<% %>
+							<form method="GET" action="payment.jsp?amount=<%=net_price %>&cid=<%=c.getCid() %>">
+								<table style="border:none;">
+									<tbody>
+										<tr>
+											<td>
+												<label>Total Amount</label>
+											</td>
+											<td>
+												<input title="TXN_AMOUNT" tabindex="10"	type="text" name="amount" value="<%=net_price%>">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<input style="border:2px black solid;border-radius:5px; background:light-gray;height:40px; width:100px;margin-left:20px;" value="CheckOut" type="submit" onclick="">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</form>
 						</div>
 						<div class="clearfix"></div>
 						<div class="clearfix"></div>
