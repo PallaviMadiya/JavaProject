@@ -56,7 +56,7 @@ public class ServletThree extends HttpServlet {
 			System.out.println("Gender: "+gender);
 			System.out.println("Password: "+password);
 			
-			request.getRequestDispatcher("view_student_information.jsp").forward(request, response);
+			request.getRequestDispatcher("pro_4_view_student_information.jsp").forward(request, response);
 		}
 	}
 
