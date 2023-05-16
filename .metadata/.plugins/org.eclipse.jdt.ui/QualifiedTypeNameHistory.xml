@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="service.Servicesss"/>
     <fullyQualifiedTypeName name="com.mysql.cj.protocol.x.Notice"/>
     <fullyQualifiedTypeName name="model.Notice"/>
     <fullyQualifiedTypeName name="dao.NoticeDao"/>
@@ -23,8 +22,6 @@
     <fullyQualifiedTypeName name="javax.servlet.ServletRequest"/>
     <fullyQualifiedTypeName name="javax.servlet.ServletResponse"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.Pro_8_Student"/>
     <fullyQualifiedTypeName name="dao.Pro_8_Dao"/>
     <fullyQualifiedTypeName name="connection.DBConnection"/>
@@ -46,4 +43,13 @@
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.sql.ResultSetMetaData"/>
     <fullyQualifiedTypeName name="model.Pro_8_Deleted_Students"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.ListIterator"/>
+    <fullyQualifiedTypeName name="Dao.StudentDao"/>
+    <fullyQualifiedTypeName name="model.Student"/>
+    <fullyQualifiedTypeName name="service.Servicesss"/>
 </qualifiedTypeNameHistroy>
