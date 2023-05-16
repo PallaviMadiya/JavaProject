@@ -126,7 +126,7 @@
            	else{ 
            		System.out.println("No Data Male "+s.getGender());}%>
            	
-           	<%if(s.getGender()=="female"){ %>
+           	<%if(s.getGender()=="femaexitle"){ %>
            		System.out.println(s.getGender);<% }
            	else{ 
            		System.out.println("No Data FemMale "+s.getGender());}%>

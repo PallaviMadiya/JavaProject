@@ -164,44 +164,13 @@ public class StudentRegister implements ActionListener{
 				}
 			t3.setText(model1.getValueAt(i, 4).toString());
 			t4.setText(model1.getValueAt(i, 5).toString());
-			
-//			DefaultTableModel tblmodel = (DefaultTableModel)tb1.getModel();
-//			
-//			String tb1sno = tblmodel.getValueAt(tb1.getSelectedRow(), 0).toString();
-//			String tb1id = tblmodel.getValueAt(tb1.getSelectedRow(), 1).toString();
-//			String tb1name = tblmodel.getValueAt(tb1.getSelectedRow(), 2).toString();
-//			String tb1gender = tblmodel.getValueAt(tb1.getSelectedRow(), 3).toString();
-//			String tb1address = tblmodel.getValueAt(tb1.getSelectedRow(), 4).toString();
-//			String tb1contact = tblmodel.getValueAt(tb1.getSelectedRow(), 5).toString();
-//			
-//			t1.setText(tb1id);
-//			t2.setText(tb1name);
-//			if(tb1gender.equals("Male"))
-//			{
-//				r1.setEnabled(true);
-//			}
-//			else
-//			{
-//				r2.setEnabled(true);
-//			}
-//			t3.setText(tb1address);
-//			t4.setText(tb1contact);
-//			
-			
+						
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		
-		
-//		String column[] = {"S.No","ID","Name","Gender","Address","Contact"};
-//		String data[][] = {{"1","101","Vibhuti","Female","Mota Taiwad","9078657849"},
-//				{"2","111","Saloni","Female","Female","Halar","9078690849"}};
-//		tb1 = new JTable(data,column);
-//		tb1.setBounds(460, 70, 500, 600);
-//		fr.add(tb1);
-		//sp = new JScrollPane(tb1);
-		//fr.add(sp);
+	
 		
 		b1.addActionListener(this);
 		b2.addActionListener(this);
@@ -222,7 +191,7 @@ public class StudentRegister implements ActionListener{
 		try {
 			
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/swingAss","root","");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
