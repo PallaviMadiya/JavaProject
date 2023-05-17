@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Spring-MVC" path="/Spring-MVC" reloadable="true" source="org.eclipse.jst.j2ee.server:Spring-MVC"/><Context docBase="Module_4" path="/Module_4" reloadable="true" source="org.eclipse.jst.jee.server:Module_4"/><Context docBase="E-Society" path="/E-Society" reloadable="true" source="org.eclipse.jst.jee.server:E-Society"/><Context docBase="Assessment_2_User" path="/Assessment_2_User" reloadable="true" source="org.eclipse.jst.jee.server:Assessment_2_User"/></Host>
+      <Context docBase="Spring-MVC" path="/Spring-MVC" reloadable="true" source="org.eclipse.jst.j2ee.server:Spring-MVC"/><Context docBase="Module_4" path="/Module_4" reloadable="true" source="org.eclipse.jst.jee.server:Module_4"/><Context docBase="E-Society" path="/E-Society" reloadable="true" source="org.eclipse.jst.jee.server:E-Society"/><Context docBase="Assessment_2_User" path="/Assessment_2_User" reloadable="true" source="org.eclipse.jst.jee.server:Assessment_2_User"/><Context docBase="Assessment_2_User_Profile" path="/Assessment_2_User_Profile" reloadable="true" source="org.eclipse.jst.jee.server:Assessment_2_User_Profile"/></Host>
     </Engine>
   </Service>
 </Server>

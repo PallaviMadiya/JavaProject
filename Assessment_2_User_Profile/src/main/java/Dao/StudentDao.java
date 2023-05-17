@@ -155,5 +155,27 @@ public class StudentDao {
 			e.printStackTrace();
 		}		
 	}
+
+	public static void updateProfile(Student s) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "update student set fname=?, lname=?, email=?, contact=?, address=?, gender=?, password=?, login_status=? where sid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, s.getFname());
+			pst.setString(2, s.getLname());
+			pst.setString(3, s.getEmail());
+			pst.setLong(4, s.getContact());
+			pst.setString(5, s.getAddress());
+			pst.setString(6, s.getGender());
+			pst.setString(7, s.getPassword());
+			pst.setString(8, s.getLogin_status());
+			pst.setInt(8, s.getSid());
+			pst.executeUpdate();
+			System.out.println("Student Profile Updated! Dao" );
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 	
 }

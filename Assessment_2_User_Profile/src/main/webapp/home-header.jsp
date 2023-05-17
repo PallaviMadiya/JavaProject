@@ -60,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <!-- nav -->
                 <div class="top-w3pvt d-flex">
                     <div id="logo">
-                        <h1> <a href="home.jsp"><span class="log-w3pvt">Assessement 2</a> <label class="sub-des">Student Management</label></h1>
+                        <h1> <a href="home.jsp"><span class="log-w3pvt">Assessement 2</a> <label class="sub-des">User Profile Management</label></h1>
                         <h1>Welcome <%=s.getFname() %></label></h1>
                     </div>
 
@@ -75,6 +75,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <ul class="menu">
                             <li class="active"><a href="home.jsp">Home</a></li>
                             <li><a href="change-password.jsp">Change Password</a></li>
+                             <li><a href="profile.jsp">Profile</a></li>
                             <!-- <li>
                                  First Tier Drop Down
                                 <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>

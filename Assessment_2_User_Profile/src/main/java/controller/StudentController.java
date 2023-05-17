@@ -213,6 +213,23 @@ public class StudentController extends HttpServlet {
 				request.getRequestDispatcher("change-password.jsp").forward(request, response);
 			}
 		}
+		else if(action.equalsIgnoreCase("edit-profile")) {
+			Student s = new Student();
+			s.setSid(Integer.parseInt(request.getParameter("sid")));
+			s.setFname(request.getParameter("fname"));
+			s.setLname(request.getParameter("lname"));
+			s.setEmail(request.getParameter("email"));
+			s.setContact(Long.parseLong(request.getParameter("contact")));
+			s.setAddress(request.getParameter("address"));
+			s.setGender(request.getParameter("gender"));
+			s.setPassword(request.getParameter("password"));
+			s.setLogin_status(request.getParameter("login_status"));
+			System.out.println(s);
+			StudentDao.updateProfile(s);
+			HttpSession session = request.getSession();
+			session.setAttribute("data", s);
+			response.sendRedirect("home.jsp");
+		}
 	}
 
 }

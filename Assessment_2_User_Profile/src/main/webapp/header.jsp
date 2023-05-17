@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <ul class="menu">
                             <li class="active"><a href="index.jsp">Home</a></li>
                             <li><a href="verify-email.jsp">Verify Email</a></li>
-                            <li><a href="Profile.jsp">Profile</a></li>
+                           
                             <li>
                                 <!-- First Tier Drop Down -->
                                 <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
