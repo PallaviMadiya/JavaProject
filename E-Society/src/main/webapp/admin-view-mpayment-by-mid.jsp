@@ -23,6 +23,11 @@
 
 				<div class="forms">
 					<div class="inline-form widget-shadow">
+					<%	String msg = (String)request.getAttribute("msg");
+    					if(msg != null)
+    					{%>
+	 						<h4><%=msg %></h4>
+   					<% }%>
 						<div class="form-body">
 							<div data-example-id="simple-form-inline"> 
 							<form action="HallBookController" method="post" class="form-inline"> 
@@ -57,27 +62,28 @@
 					</tr> 
 					</thead> 
 					<tbody> 
-					<% int mid = Integer.parseInt(request.getParameter("mid")); %>
-					<%List<Maintenance> list1 = MPaymentDao.getMaintenanceByMid(mid); %>
-					<%for(Maintenance m1 : list1){ %>
-					<tr class="active"> 
-					<th scope="row"><%=m1.getMp_id() %></th> 
-					<td><%=m1.getMid() %></td> 
-						<%List<Member> list2 = AdminDao.getMemberByMid(m1.getMid());%>
-						<%for(Member m2 : list2){ %>
-						<td><%=m2.getFname() %> <%=m2.getLname() %></td> 
-						<td><%=m2.getH_no() %></td>
-						<td><%=m2.getJoin_date() %></td> 
-						<%} %>
-					
-					<td><%=m1.getM_date() %></td>
-					<td><%=m1.getM_amount()  %></td>
-					
+					<%	int mid = Integer.parseInt(request.getParameter("mid"));
+    					if(mid!=0){   					
+							
+							System.out.println("Member ID:"+mid);
+							List<Maintenance> list1 = MPaymentDao.getMaintenanceByMid(mid);
+							for(Maintenance m1 : list1){ %>
+								<tr class="active"> 
+								<th scope="row"><%=m1.getMp_id() %></th> 
+								<td><%=m1.getMid() %></td> 
+								<%List<Member> list2 = AdminDao.getMemberByMid(m1.getMid());%>
+								<%for(Member m2 : list2){ %>
+									<td><%=m2.getFname() %> <%=m2.getLname() %></td> 
+									<td><%=m2.getH_no() %></td>
+									<td><%=m2.getJoin_date() %></td> 
+								<%} %>
 						
-						
+								<td><%=m1.getM_date() %></td>
+								<td><%=m1.getM_amount()  %></td>
+							<%} %>
+					<%}%>
 					
 					</tr> 
-					<%} %>
 					</tbody> 
 					</table> 
 				</div>

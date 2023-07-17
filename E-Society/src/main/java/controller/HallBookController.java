@@ -82,8 +82,16 @@ public class HallBookController extends HttpServlet {
 		}
 		else if(action.equalsIgnoreCase("AdminViewMPaymentByMid"))
 		{
-			int mid = Integer.parseInt(request.getParameter("mid"));
-			response.sendRedirect("admin-view-mpayment-by-mid.jsp?mid="+mid);
+			int mid = 0;
+			mid = Integer.parseInt(request.getParameter("mid"));			
+			if(mid==0) {
+				request.setAttribute("msg", "Please Enter Member Id!");
+				System.out.println("Please Enter Member Id");
+				request.getRequestDispatcher("admin-view-mpayment-by-mid.jsp").forward(request, response);
+			}
+			else {
+				response.sendRedirect("admin-view-mpayment-by-mid.jsp?mid="+mid);
+			}			
 		}
 	}
 

@@ -194,7 +194,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
               </li>
 			  <li>
                 <a href="admin-logout.jsp">
-                <i class="fa fa-th"></i> <span>Sign Out</span>
+                <i class="fa-sign-out"></i> 
+                <span>Sign Out</span>
                 </a>
               </li>
               
